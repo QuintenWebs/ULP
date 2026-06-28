@@ -13,11 +13,15 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
   return <div ref={ref} className="fade-up">{children}</div>;
 }
 
-const team = [
-  { name: "Janne Reedeker", img: "/manus-storage/janne-reedeker_c4c3c8b4.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
-  { name: "Nasra Kigombola", img: "/manus-storage/nasra-kigombola_ab813338.png", linkedin: "" },
-  { name: "Kaspari", img: "/manus-storage/kaspari_b59d8f1c.png", linkedin: "" },
-  { name: "Shakira Nasser", img: "/manus-storage/team-shakira_eb467108.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
+const teamNL = [
+  { name: "Hans Valkenburg", title: "Support Team Netherlands", img: "/manus-storage/team-hans_caa2ef2d.jpg", linkedin: "https://www.linkedin.com/in/hansvalkenburg/" },
+  { name: "Janne Reedeker", title: "Support Team Netherlands", img: "/manus-storage/janne-reedeker_c4c3c8b4.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
+];
+
+const teamTZ = [
+  { name: "Shakira Nasser", title: "Manager & Mentor", img: "/manus-storage/team-shakira_eb467108.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
+  { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "/manus-storage/nasra-kigombola_ab813338.png", linkedin: "" },
+  { name: "Kaspary", title: "Staff Mabughai & ULP Programme Coordinator", img: "/manus-storage/kaspari_b59d8f1c.png", linkedin: "" },
 ];
 
 export default function MeetOurTeam() {
@@ -36,23 +40,57 @@ export default function MeetOurTeam() {
               The Ubuntu Leadership Team consists of both Dutch and Tanzanian team members, united by a shared mission and vision to create a brighter future for the Usambara region.
             </p>
           </FadeSection>
+          {/* Tanzania team — shown first */}
           <FadeSection delay={60}>
-            <span className="ulp-label ulp-label-outline mb-8 inline-block">The Initiators</span>
+            <span className="ulp-label ulp-label-outline mb-8 inline-block">Tanzania</span>
+          </FadeSection>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {teamTZ.map((member, i) => {
+              const imgStyle: React.CSSProperties =
+                member.name === "Nasra Kigombola" ? { objectPosition: "center 15%" } :
+                member.name === "Kaspary"         ? { objectPosition: "center 15%" } :
+                { objectPosition: "center 20%" }; // Shakira
+              return (
+                <FadeSection key={member.name} delay={i * 70}>
+                  <div className="group">
+                    <div className="overflow-hidden mb-3">
+                      <img src={member.img} alt={member.name} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={imgStyle} />
+                    </div>
+                    <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}>{member.name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }}>{member.title}</p>
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }}>LinkedIn →</a>
+                    )}
+                  </div>
+                </FadeSection>
+              );
+            })}
+          </div>
+
+          {/* Netherlands team */}
+          <FadeSection delay={60}>
+            <span className="ulp-label ulp-label-outline mb-8 inline-block">The Netherlands</span>
           </FadeSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, i) => (
-              <FadeSection key={member.name} delay={i * 70}>
-                <div className="group">
-                  <div className="overflow-hidden mb-3">
-                    <img src={member.img} alt={member.name} className="w-full h-72 object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+            {teamNL.map((member, i) => {
+              const imgStyle: React.CSSProperties =
+                member.name === "Janne Reedeker" ? { objectPosition: "center 35%" } :
+                { objectPosition: "center 20%" }; // Hans
+              return (
+                <FadeSection key={member.name} delay={i * 70}>
+                  <div className="group">
+                    <div className="overflow-hidden mb-3">
+                      <img src={member.img} alt={member.name} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={imgStyle} />
+                    </div>
+                    <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}>{member.name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }}>{member.title}</p>
+                    {member.linkedin && (
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }}>LinkedIn →</a>
+                    )}
                   </div>
-                  <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}>{member.name}</p>
-                  {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-0.5 block" style={{ color: "#D4521A" }}>LinkedIn →</a>
-                  )}
-                </div>
-              </FadeSection>
-            ))}
+                </FadeSection>
+              );
+            })}
           </div>
         </div>
       </section>

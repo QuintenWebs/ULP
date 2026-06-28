@@ -333,7 +333,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#D4521A] transition-colors duration-150"
+                      className="hover:text-[#D4521A] hover:underline transition-colors duration-150"
                       style={{ color: "#9A8A72" }}
                     >
                       {link.label}

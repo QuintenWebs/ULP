@@ -11,9 +11,10 @@ import Layout from "@/components/Layout";
 
 const IMG_AGRICULTURE  = "/manus-storage/agriculture_mountain_farming_2e305ef0.jpg";
 const IMG_TREE_NURSERY = "/manus-storage/tree_nursery_seedlings_2f1a2f5f.jpg";
+const IMG_COMMUNITY    = "/manus-storage/community_women_hillside_waving_c42caa72.jpg";
 const PDF_PRESENTATION = "/manus-storage/ULP-presentation-2024_03d5038f.pdf";
 
-function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function FadeSection({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current; if (!el) return;
@@ -21,7 +22,7 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } }, { threshold: 0.12 });
     obs.observe(el); return () => obs.disconnect();
   }, [delay]);
-  return <div ref={ref} className="fade-up">{children}</div>;
+  return <div ref={ref} className={`fade-up ${className}`}>{children}</div>;
 }
 
 // Four info cards for the Business School description
@@ -115,22 +116,14 @@ export default function TheProgram() {
               </FadeSection>
             </div>
 
-            {/* Image column */}
-            <div className="lg:col-span-2 flex flex-col gap-4">
-              <FadeSection delay={60}>
-                <img
-                  src={IMG_AGRICULTURE}
-                  alt="Mountain farming and agriculture in the Usambara region"
-                  className="w-full h-56 object-cover"
-                  style={{ objectPosition: "center 40%" }}
-                />
-              </FadeSection>
-              <FadeSection delay={120}>
+            {/* Image column — fills the same height as the cards + prose column */}
+            <div className="lg:col-span-2 lg:flex flex-col">
+              <FadeSection delay={60} className="flex-1 flex flex-col">
                 <img
                   src={IMG_TREE_NURSERY}
                   alt="Tree nursery seedlings, community environmental project"
-                  className="w-full h-56 object-cover"
-                  style={{ objectPosition: "center 50%" }}
+                  className="w-full flex-1 object-cover"
+                  style={{ minHeight: "400px", objectPosition: "center 50%" }}
                 />
               </FadeSection>
             </div>
@@ -138,27 +131,7 @@ export default function TheProgram() {
         </div>
       </section>
 
-      {/* ── 2. The Presentation (PDF download) ── */}
-      <section className="py-12 lg:py-16" style={{ backgroundColor: "#FDFAF4" }}>
-        <div className="container">
-          <FadeSection>
-            <span className="ulp-label ulp-label-outline mb-5 inline-block">The presentation</span>
-            <h2 className="ulp-section-title mb-6">Learn more about the program</h2>
-          </FadeSection>
-          <FadeSection delay={80}>
-            <div className="flex items-center gap-5 p-6 max-w-2xl" style={{ backgroundColor: "#F5EFE0", border: "1px solid #D9CDB8" }}>
-              <div className="w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#D4521A" }}>
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-              </div>
-              <div className="flex-1">
-                <p className="font-semibold text-[#2C2416] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}>ULP Presentation 2024</p>
-                <p className="text-sm text-[#6B5B45]">Download our full program presentation (PDF)</p>
-              </div>
-              <a href={PDF_PRESENTATION} target="_blank" rel="noopener noreferrer" className="ulp-btn flex-shrink-0">Download</a>
-            </div>
-          </FadeSection>
-        </div>
-      </section>
+
 
       {/* ── 3. Our Vision ── */}
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#1A1A14" }}>
@@ -166,10 +139,10 @@ export default function TheProgram() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <FadeSection>
               <img
-                src={IMG_AGRICULTURE}
-                alt="Agriculture and farming in the Usambara Mountains"
+                src={IMG_COMMUNITY}
+                alt="Community members in the Usambara Mountains"
                 className="w-full h-[380px] object-cover"
-                style={{ objectPosition: "center 30%" }}
+                style={{ objectPosition: "center 40%" }}
               />
             </FadeSection>
             <FadeSection delay={100}>

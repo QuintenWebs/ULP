@@ -166,14 +166,7 @@ export default function OurCurriculum() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-14 lg:py-20" style={{ backgroundColor: "#F5EFE0" }}>
-        <div className="container max-w-3xl">
-          <FadeSection>
-            <Link href="/our-partners/" className="ulp-btn">Meet our partners</Link>
-          </FadeSection>
-        </div>
-      </section>
+
     </Layout>
   );
 }

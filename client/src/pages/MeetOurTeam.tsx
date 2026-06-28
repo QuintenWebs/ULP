@@ -21,7 +21,7 @@ const teamNL = [
 const teamTZ = [
   { name: "Shakira Nasser", title: "Manager & Mentor", img: "/manus-storage/team-shakira_eb467108.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
   { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "/manus-storage/nasra-kigombola_ab813338.png", linkedin: "" },
-  { name: "Kaspary", title: "Staff Mabughai & ULP Programme Coordinator", img: "/manus-storage/kaspari_b59d8f1c.png", linkedin: "" },
+  { name: "Kaspary Jansen", title: "Staff Mabughai & ULP Programme Coordinator", img: "/manus-storage/kaspari_b59d8f1c.png", linkedin: "" },
 ];
 
 export default function MeetOurTeam() {

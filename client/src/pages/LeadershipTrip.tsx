@@ -9,11 +9,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Mountain, Users, Lightbulb, UtensilsCrossed, Globe, Binoculars } from "lucide-react";
 
-const IMG_ROUNDHOUSE   = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/otRQertyCyDMIFlW.jpg";
-const IMG_HIKE         = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/zKtquokvHeheXEJW.jpg";
-const IMG_SUNSET_DIN   = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/AxtNXLhuOXQJZjzf.jpg";
-const IMG_COMMUNITY    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HsyVZZYGLRTktoIY.jpg";
-const IMG_PORTRAIT_MOB = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/gftowTNglxLxEjQw.jpg";
+const IMG_ROUNDHOUSE   = "/assets/community_gathering_roundhouse.jpg";
+const IMG_HIKE         = "/assets/misty_mountain_hike.jpg";
+const IMG_SUNSET_DIN   = "/assets/sunset_dinner_mountain_view.jpg";
+const IMG_COMMUNITY    = "/assets/community_women_hillside_waving.jpg";
+const IMG_PORTRAIT_MOB = "/assets/rain_over_valley_viewpoint.jpg";
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

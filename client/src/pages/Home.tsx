@@ -9,11 +9,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663668553315/82ai2dTBzGDCZKp5bSqxUt/hero-usambara-JusTpstPNxex4soRUxCzgf.webp";
-const IMG_TEAM        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/VqNMKqXxcAFXqkzI.jpg";
-const IMG_MARKET_DAY1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/aqMEoJxiLGvqJaLU.jpg";
-const IMG_AGRI        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/MNJpJRqZjFHYGJBU.jpg";
-const IMG_SUNSET      = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/AxtNXLhuOXQJZjzf.jpg";
-const IMG_STUDENTS    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HsyVZZYGLRTktoIY.jpg";
+const IMG_TEAM        = "/assets/community_team_photo_ulp.jpg";
+const IMG_MARKET_DAY1 = "/assets/local_market_day_1.jpg";
+const IMG_AGRI        = "/assets/agriculture_mountain_farming.jpg";
+const IMG_SUNSET      = "/assets/sunset_dinner_mountain_view.jpg";
+const IMG_STUDENTS    = "/assets/community_women_hillside_waving.jpg";
 
 const pillars = [
   {

@@ -14,14 +14,14 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 const teamNL = [
-  { name: "Hans Valkenburg", title: "Support Team Netherlands", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/GjKvAYswLEnPxaco.jpg", linkedin: "https://www.linkedin.com/in/hansvalkenburg/" },
-  { name: "Janne Reedeker", title: "Support Team Netherlands", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/LkcaVUeBarVpxWGU.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
+  { name: "Hans Valkenburg", title: "Support Team Netherlands", img: "/assets/team-hans.jpg", linkedin: "https://www.linkedin.com/in/hansvalkenburg/" },
+  { name: "Janne Reedeker", title: "Support Team Netherlands", img: "/assets/janne-reedeker.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
 ];
 
 const teamTZ = [
-  { name: "Shakira Nasser", title: "Manager & Mentor", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/KMnXSakgyQvhiKnn.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
-  { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/YMmxeWkgPLYWEQbI.png", linkedin: "" },
-  { name: "Kaspary Felix Mponda", title: "Staff Mabughai & ULP Programme Coordinator", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/IiGdtejbKEiXYtKW.png", linkedin: "" },
+  { name: "Shakira Nasser", title: "Manager & Mentor", img: "/assets/team-shakira.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
+  { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "/assets/nasra-kigombola.png", linkedin: "" },
+  { name: "Kaspary Felix Mponda", title: "Staff Mabughai & ULP Programme Coordinator", img: "/assets/kaspari.png", linkedin: "" },
 ];
 
 export default function MeetOurTeam() {

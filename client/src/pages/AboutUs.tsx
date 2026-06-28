@@ -13,8 +13,8 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
   return <div ref={ref} className="fade-up">{children}</div>;
 }
 
-const PDF_POLICY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/UgdgHSlkkNMKdfpQ.pdf";
-const PDF_ANBI = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/lEiqCTjalYCiGXxi.pdf";
+const PDF_POLICY = "/assets/Policy-Plan-ULP.pdf";
+const PDF_ANBI = "/assets/ANBI_publicatie_ULP.pdf";
 
 export default function AboutUs() {
   return (

@@ -9,10 +9,10 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
-const IMG_AGRICULTURE  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/MNJpJRqZjFHYGJBU.jpg";
-const IMG_TREE_NURSERY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/qjWrocTPLeDLzrqM.jpg";
-const IMG_COMMUNITY    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HsyVZZYGLRTktoIY.jpg";
-const PDF_PRESENTATION = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HZzxhWjlBdzamVAP.pdf";
+const IMG_AGRICULTURE  = "/assets/agriculture_mountain_farming.jpg";
+const IMG_TREE_NURSERY = "/assets/tree_nursery_seedlings.jpg";
+const IMG_COMMUNITY    = "/assets/community_women_hillside_waving.jpg";
+const PDF_PRESENTATION = "/assets/ULP-presentation-2024.pdf";
 
 function FadeSection({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);

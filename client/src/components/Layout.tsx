@@ -9,7 +9,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
 
-const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/iZolsFHXkXifpJPk.png";
+const LOGO_URL = "/assets/ulp-logo.png";
 
 interface DropdownItem {
   label: string;

@@ -13,14 +13,14 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 const partners = [
-  { name: "Ukarimu Academy", url: "https://ukarimuacademy.org/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/zgKfaMgAlGEEnPdK.png", description: "Leadership and hospitality academy in the Usambara region." },
-  { name: "Mabughai Technical College", url: "https://mabughai.ac.tz/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/ldWJsADtRdmwtsJq.png", description: "Community development technical training institute since 2007." },
-  { name: "Lawns Hotel", url: "https://lawnshotel.com/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/orvxznDHXSLBUOeT.png", description: "Boutique hotel in Lushoto providing on-the-job training placements." },
-  { name: "Shambaa Ecotours", url: "https://shambaaecotours.co.tz/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/QpyYMoYpJfXOfXKe.png", description: "Cultural and eco-tourism operator in the Usambara Mountains." },
-  { name: "Mambo ViewPoint", url: "https://www.mamboviewpoint.org/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/EnhHkNGCgfRUPaML.png", description: "Eco lodge and community hub in the Usambara highlands." },
-  { name: "Usambara Ecotours", url: "https://www.usambaraecotours.com/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/DSJLUFgkjUpIoasB.png", description: "Cultural tourism connecting visitors with local Usambara communities." },
-  { name: "Youth Peacemakers Tanzania", url: "https://youthpeacemakers.or.tz/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/hcXjOiXnOYjMxFiv.png", description: "Youth-led organisation promoting peace and development in Lushoto." },
-  { name: "PUM Netherlands", url: "https://www.pum.nl/", logo: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/UVSHUIjDcDYoQFEM.png", description: "Dutch organisation connecting senior experts with entrepreneurs in developing countries." },
+  { name: "Ukarimu Academy", url: "https://ukarimuacademy.org/", logo: "/assets/ukarimu-academy.png", description: "Leadership and hospitality academy in the Usambara region." },
+  { name: "Mabughai Technical College", url: "https://mabughai.ac.tz/", logo: "/assets/mabughai-technical-college.png", description: "Community development technical training institute since 2007." },
+  { name: "Lawns Hotel", url: "https://lawnshotel.com/", logo: "/assets/lawns-hotel.png", description: "Boutique hotel in Lushoto providing on-the-job training placements." },
+  { name: "Shambaa Ecotours", url: "https://shambaaecotours.co.tz/", logo: "/assets/shambaa-ecotours.png", description: "Cultural and eco-tourism operator in the Usambara Mountains." },
+  { name: "Mambo ViewPoint", url: "https://www.mamboviewpoint.org/", logo: "/assets/mambo-viewpoint.png", description: "Eco lodge and community hub in the Usambara highlands." },
+  { name: "Usambara Ecotours", url: "https://www.usambaraecotours.com/", logo: "/assets/usambara-ecotours.png", description: "Cultural tourism connecting visitors with local Usambara communities." },
+  { name: "Youth Peacemakers Tanzania", url: "https://youthpeacemakers.or.tz/", logo: "/assets/youth-peacemakers.png", description: "Youth-led organisation promoting peace and development in Lushoto." },
+  { name: "PUM Netherlands", url: "https://www.pum.nl/", logo: "/assets/pum-netherlands.png", description: "Dutch organisation connecting senior experts with entrepreneurs in developing countries." },
 ];
 
 export default function OurPartners() {

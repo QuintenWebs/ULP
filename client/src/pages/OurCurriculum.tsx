@@ -7,8 +7,8 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
-const IMG_KITCHEN  = "/manus-storage/kitchen_team_photo_8780a760.jpg";
-const IMG_CAMPFIRE = "/manus-storage/cooking_together_around_fire_3872ef73.jpg";
+const IMG_KITCHEN  = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/PkJnRIWejHdLAuaf.jpg";
+const IMG_CAMPFIRE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/TsFgWLunLHqlDflE.jpg";
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

@@ -9,11 +9,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663668553315/82ai2dTBzGDCZKp5bSqxUt/hero-usambara-JusTpstPNxex4soRUxCzgf.webp";
-const IMG_TEAM        = "/manus-storage/community_team_photo_ulp_b2094ca1.jpg";
-const IMG_MARKET_DAY1 = "/manus-storage/local_market_day_1_44ddb0bd.jpg";
-const IMG_AGRI        = "/manus-storage/agriculture_mountain_farming_1670cf31.jpg";
-const IMG_SUNSET      = "/manus-storage/sunset_dinner_mountain_view_7d1d5409.jpg";
-const IMG_STUDENTS    = "/manus-storage/community_women_hillside_waving_c42caa72.jpg";
+const IMG_TEAM        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/VqNMKqXxcAFXqkzI.jpg";
+const IMG_MARKET_DAY1 = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/aqMEoJxiLGvqJaLU.jpg";
+const IMG_AGRI        = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/MNJpJRqZjFHYGJBU.jpg";
+const IMG_SUNSET      = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/AxtNXLhuOXQJZjzf.jpg";
+const IMG_STUDENTS    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HsyVZZYGLRTktoIY.jpg";
 
 const pillars = [
   {

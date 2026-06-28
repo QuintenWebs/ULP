@@ -8,8 +8,8 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
-const IMG_SUNSET = "/manus-storage/sunset_dinner_mountain_view_7d1d5409.jpg";
-const IMG_COMMUNITY = "/manus-storage/community_gathering_roundhouse_6cd0652e.jpg";
+const IMG_SUNSET = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/AxtNXLhuOXQJZjzf.jpg";
+const IMG_COMMUNITY = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/otRQertyCyDMIFlW.jpg";
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

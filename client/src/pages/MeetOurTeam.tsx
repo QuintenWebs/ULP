@@ -14,14 +14,14 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 const teamNL = [
-  { name: "Hans Valkenburg", title: "Support Team Netherlands", img: "/manus-storage/team-hans_caa2ef2d.jpg", linkedin: "https://www.linkedin.com/in/hansvalkenburg/" },
-  { name: "Janne Reedeker", title: "Support Team Netherlands", img: "/manus-storage/janne-reedeker_c4c3c8b4.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
+  { name: "Hans Valkenburg", title: "Support Team Netherlands", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/GjKvAYswLEnPxaco.jpg", linkedin: "https://www.linkedin.com/in/hansvalkenburg/" },
+  { name: "Janne Reedeker", title: "Support Team Netherlands", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/LkcaVUeBarVpxWGU.png", linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/" },
 ];
 
 const teamTZ = [
-  { name: "Shakira Nasser", title: "Manager & Mentor", img: "/manus-storage/team-shakira_eb467108.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
-  { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "/manus-storage/nasra-kigombola_ab813338.png", linkedin: "" },
-  { name: "Kaspary Felix Mponda", title: "Staff Mabughai & ULP Programme Coordinator", img: "/manus-storage/kaspari_b59d8f1c.png", linkedin: "" },
+  { name: "Shakira Nasser", title: "Manager & Mentor", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/KMnXSakgyQvhiKnn.jpg", linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/" },
+  { name: "Nasra Kigombola", title: "Teacher, Mentor & Support", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/YMmxeWkgPLYWEQbI.png", linkedin: "" },
+  { name: "Kaspary Felix Mponda", title: "Staff Mabughai & ULP Programme Coordinator", img: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/IiGdtejbKEiXYtKW.png", linkedin: "" },
 ];
 
 export default function MeetOurTeam() {

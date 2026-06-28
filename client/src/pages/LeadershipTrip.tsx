@@ -9,11 +9,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Mountain, Users, Lightbulb, UtensilsCrossed, Globe, Binoculars } from "lucide-react";
 
-const IMG_ROUNDHOUSE   = "/manus-storage/community_gathering_roundhouse_6cd0652e.jpg";
-const IMG_HIKE         = "/manus-storage/misty_mountain_hike_6f59bea9.jpg";
-const IMG_SUNSET_DIN   = "/manus-storage/sunset_dinner_mountain_view_7d1d5409.jpg";
-const IMG_COMMUNITY    = "/manus-storage/community_women_hillside_waving_c42caa72.jpg";
-const IMG_PORTRAIT_MOB = "/manus-storage/rain_over_valley_viewpoint_92908b75.jpg";
+const IMG_ROUNDHOUSE   = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/otRQertyCyDMIFlW.jpg";
+const IMG_HIKE         = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/zKtquokvHeheXEJW.jpg";
+const IMG_SUNSET_DIN   = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/AxtNXLhuOXQJZjzf.jpg";
+const IMG_COMMUNITY    = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/HsyVZZYGLRTktoIY.jpg";
+const IMG_PORTRAIT_MOB = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/gftowTNglxLxEjQw.jpg";
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

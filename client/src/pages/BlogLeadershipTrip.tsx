@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 
-const IMG_ROUNDHOUSE = "/manus-storage/community_gathering_roundhouse_6cd0652e.jpg";
+const IMG_ROUNDHOUSE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/otRQertyCyDMIFlW.jpg";
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);

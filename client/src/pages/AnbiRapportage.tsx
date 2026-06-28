@@ -12,8 +12,8 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
   return <div ref={ref} className="fade-up">{children}</div>;
 }
 
-const PDF_ANBI = "/manus-storage/ANBI_publicatie_ULP_23813ed9.pdf";
-const ANBI_BADGE = "/manus-storage/bld_logo_12ba5e55.svg";
+const PDF_ANBI = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/lEiqCTjalYCiGXxi.pdf";
+const ANBI_BADGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663668553315/IRfmWFhRZUOtSWCh.svg";
 const ANBI_GOV_URL = "https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/bijzondere_regelingen/goede_doelen/algemeen_nut_beogende_instellingen/";
 
 export default function AnbiRapportage() {

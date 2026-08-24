@@ -1,0 +1,72 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": "Ubuntu Leadership Program",
+      "titleStart": "Empowering the",
+      "titleAccent": "Usambara",
+      "titleEnd": "Region",
+      "subtitle": "A business school, an investment fund, leadership trips and short courses in the Usambara Mountains, Tanzania.",
+      "primaryCta": "Discover the program",
+      "secondaryCta": "Support us",
+      "backgroundImage": "/assets/misty_mountain_hike.jpg"
+    },
+    "intro": {
+      "eyebrow": "Our story",
+      "title": "Empowering the Youth of the Usambara Mountains",
+      "paragraphs": [
+        "The Ubuntu Leadership Program is created to empower the youth of Tanzania's Usambara Mountains. Known for its rich biodiversity, the Usambara region attracts people that want to make a living.",
+        "However, many young people from the area leave in search of work, as the economy in the Usambara Mountains is still very agricultural oriented.",
+        "The Ubuntu Leadership Program invests in local entrepreneurs and offers tailored coaching and training in leadership, entrepreneurship and craftsmanship. The ULP Business School was founded to offer youth in the region a chance to gain industry-specific skills without having to leave their community."
+      ],
+      "cta": "Read more about the program",
+      "imageTeam": "/assets/community_team_photo_ulp.jpg",
+      "imageTeamAlt": "ULP community team in the Usambara Mountains",
+      "imageMarket": "/assets/local_market_day_1.jpg",
+      "imageMarketAlt": "Local market day in Lushoto",
+      "imageAgriculture": "/assets/agriculture_mountain_farming.jpg",
+      "imageAgricultureAlt": "Mountain farming in the Usambara"
+    },
+    "pillars": {
+      "eyebrow": "The program",
+      "title": "The Four Pillars",
+      "intro": "One program, four reinforcing parts that build a stronger local economy.",
+      "items": [
+        {
+          "label": "ULP Business School",
+          "sublabel": "The core",
+          "desc": "A one-year training and coaching curriculum for young people from the Usambara."
+        },
+        {
+          "label": "ULP Investment Fund",
+          "sublabel": "Scale-ups",
+          "desc": "Microcredit and tailored coaching for existing local scale-up entrepreneurs."
+        },
+        {
+          "label": "Ubuntu Leadership Trips",
+          "sublabel": "Sustaining",
+          "desc": "Immersive trips for European professionals that sustain the program."
+        },
+        {
+          "label": "ULP Short Courses",
+          "sublabel": "Community",
+          "desc": "Demand-driven practical courses and clinics for the wider community."
+        }
+      ]
+    },
+    "mission": {
+      "eyebrow": "Our mission",
+      "title": "Skilled Youth, Stronger Businesses & a Thriving Local Economy",
+      "body": "ULP tackles the shortage of qualified labour and the need for stronger businesses in the Usambara region. Through the ULP Business School, the ULP Investment Fund, Ubuntu Leadership Trips that sustain the program, and demand-driven ULP Short Courses, we help young people become skilled professionals, support existing entrepreneurs, and build a more dynamic and sustainable local economy.",
+      "cta": "Our mission and vision",
+      "image": "/assets/community_women_hillside_waving.jpg",
+      "imageAlt": "ULP students in class"
+    },
+    "getInvolved": {
+      "title": "Ready to make a difference?",
+      "body": "Whether you want to participate, donate, partner with us, or join a leadership trip, there are many ways to support the Ubuntu Leadership Program.",
+      "donateCta": "Donate",
+      "participateCta": "Participate",
+      "tripCta": "Join the Leadership Trip"
+    }
+  }
+}

@@ -20,6 +20,7 @@ import Donate from "./pages/Donate";
 import Partnership from "./pages/Partnership";
 import LeadershipTrip from "./pages/LeadershipTrip";
 import NewsStories from "./pages/NewsStories";
+import BlogPost from "./pages/BlogPost";
 import BlogTrueLeader from "./pages/BlogTrueLeader";
 import BlogLeadershipTrip from "./pages/BlogLeadershipTrip";
 import BlogEnglishClasses from "./pages/BlogEnglishClasses";
@@ -37,6 +38,8 @@ function Router() {
     <Switch>
       {/* Main pages */}
       <Route path="/" component={Home} />
+      {/* Posts written in the CMS; the original four keep their own pages. */}
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/short-courses/" component={ShortCourses} />
       <Route path="/short-courses" component={ShortCourses} />
       <Route path="/the-program/" component={TheProgram} />

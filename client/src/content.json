@@ -68,5 +68,51 @@
       "participateCta": "Participate",
       "tripCta": "Join the Leadership Trip"
     }
+  },
+  "blog": {
+    "eyebrow": "News & Stories",
+    "title": "Blog",
+    "posts": [
+      {
+        "title": "Join the Ubuntu Leadership Trip 2026",
+        "date": "June 11, 2026",
+        "author": "Janne",
+        "excerpt": "After three highly successful retreats, the Ubuntu Leadership Trip 2026 returns in the first week of November. This year's theme: Ubuntu Leadership, leading in relationship with the other. Guided by leadership coach Margreet Oostenbrink, this trip combines adventure, reflection, and personal development, while making the ULP Business School possible.",
+        "href": "/uncategorized/ubuntu-leadership-trip-2026/",
+        "slug": "ubuntu-leadership-trip-2026",
+        "cover": "",
+        "body": ""
+      },
+      {
+        "title": "A true Ubuntu leader",
+        "date": "April 8, 2026",
+        "author": "Kees Huibers",
+        "excerpt": "Meet Anna. From an underprivileged background to becoming an entrepreneur. Her journey is truly inspiring. After completing a one-year program at ULP Business School, followed by an investment from ULP Invest, she successfully launched her own restaurant and catering service in Lushoto, Tanzania.",
+        "href": "/uncategorized/475/",
+        "slug": "a-true-ubuntu-leader",
+        "cover": "",
+        "body": ""
+      },
+      {
+        "title": "Join the Ubuntu Leadership Trip 2025",
+        "date": "April 7, 2025",
+        "author": "Kees Huibers",
+        "excerpt": "Join the Ubuntu Leadership Trip 2025 from November 1st to 8th. A journey full of reflection, coaching, connection, nature, and enjoyment. By joining, you also support the ULP Business School!",
+        "href": "/uncategorized/427/",
+        "slug": "ubuntu-leadership-trip-2025",
+        "cover": "",
+        "body": ""
+      },
+      {
+        "title": "How English Classes Transform Our Trainees",
+        "date": "April 1, 2025",
+        "author": "Kees Huibers",
+        "excerpt": "In Tanzania's growing tourism and hospitality industry, strong English skills are essential. From welcoming guests at lodges to providing top-notch service in restaurants, effective communication makes all the difference.",
+        "href": "/uncategorized/how-english-classes-transform-our-trainees/",
+        "slug": "how-english-classes-transform-our-trainees",
+        "cover": "",
+        "body": ""
+      }
+    ]
   }
 }

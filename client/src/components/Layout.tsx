@@ -3,11 +3,18 @@
  * Design: Warm Savanna Editorial
  * Nav: slim white bar, tree logo left-aligned, Barlow Condensed uppercase links, dropdown menus
  * Footer: dark charcoal with contact info and social links
+ *
+ * Footer copy comes from content.json so it can be edited in the Mirantic CMS.
+ * Layout renders on every page, so these fields appear on all pages. Navigation
+ * (header menu, quick-link labels and routes), hrefs and the logo stay in code.
  */
 
-import { useState, useEffect, useRef } from "react";
+import { Fragment, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
+import content from "@/content.json";
+
+const c = content.layout;
 
 const LOGO_URL = "/assets/ulp-logo.png";
 
@@ -308,8 +315,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="h-12 w-auto object-contain mb-4"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
-              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72" }}>
-                A business school, an investment fund, leadership trips and short courses in the Usambara Mountains, Tanzania.
+              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72" }} data-cms-field="layout.footer.tagline">
+                {c.footer.tagline}
               </p>
             </div>
 
@@ -318,8 +325,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4
                 className="text-xs uppercase tracking-widest mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }}
+                data-cms-field="layout.footer.quickLinksHeading"
               >
-                Quick Links
+                {c.footer.quickLinksHeading}
               </h4>
               <ul className="space-y-2 text-sm">
                 {[
@@ -348,23 +356,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4
                 className="text-xs uppercase tracking-widest mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }}
+                data-cms-field="layout.footer.contactHeading"
               >
-                Contact
+                {c.footer.contactHeading}
               </h4>
               <address className="not-italic text-sm space-y-2" style={{ color: "#9A8A72" }}>
-                <p>Oudegracht 417<br />3511 PJ Utrecht<br />The Netherlands</p>
                 <p>
-                  <a href="tel:+31622475658" className="hover:text-[#D4521A] transition-colors">
-                    +31 6 22 47 56 58
+                  {c.footer.addressLines.map((line, i) => (
+                    <Fragment key={i}>
+                      {i > 0 && <br />}
+                      <span data-cms-field={`layout.footer.addressLines[${i}]`}>{line}</span>
+                    </Fragment>
+                  ))}
+                </p>
+                <p>
+                  <a href={`tel:${c.footer.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.phone">
+                    {c.footer.phone}
                   </a>
                 </p>
                 <p>
-                  <a href="mailto:info@ubuntuleadershipprogram.nl" className="hover:text-[#D4521A] transition-colors">
-                    info@ubuntuleadershipprogram.nl
+                  <a href={`mailto:${c.footer.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.email">
+                    {c.footer.email}
                   </a>
                 </p>
-                <p style={{ color: "#6B5B45" }}>
-                  Bank: NL56 RABO 0323 7422 70
+                <p style={{ color: "#6B5B45" }} data-cms-field="layout.footer.bank">
+                  {c.footer.bank}
                 </p>
               </address>
               {/* Social */}
@@ -399,7 +415,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             className="mt-10 pt-6 text-xs text-center"
             style={{ borderTop: "1px solid #2C2C22", color: "#4A3E2E" }}
           >
-            © {new Date().getFullYear()} Ubuntu Leadership Program Foundation. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <span data-cms-field="layout.footer.copyright">{c.footer.copyright}</span>
           </div>
         </div>
       </footer>

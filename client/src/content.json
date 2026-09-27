@@ -114,5 +114,660 @@
         "body": ""
       }
     ]
+  },
+  "theProgram": {
+    "header": {
+      "eyebrow": "The program",
+      "title": "Our Program Explained"
+    },
+    "businessSchool": {
+      "eyebrow": "Pillar 1",
+      "title": "ULP Business School",
+      "intro": "A one-year training and coaching programme in hospitality, built for the Usambara.",
+      "cards": [
+        {
+          "label": "Timeline",
+          "value": "One year",
+          "detail": "A full-year training & coaching programme combining theory, on-the-job practice, and personal leadership development."
+        },
+        {
+          "label": "Location",
+          "value": "Usambara Mountains",
+          "detail": "Training takes place at participating hotels in the Usambara region, in cooperation with Mabughai Technical College."
+        },
+        {
+          "label": "Focus",
+          "value": "Hospitality & Tourism",
+          "detail": "On-the-job training across hotel departments, followed by six months of specialisation in a chosen area of the industry."
+        },
+        {
+          "label": "Audience",
+          "value": "Ages 18 – 28",
+          "detail": "School leavers from the Usambara region who want to build a professional career and future close to home."
+        }
+      ],
+      "body": "The programme qualifies participants as professional workforce and entrepreneurs through on-the-job training across all departments of participating hotels. After six months of broad exposure, students specialise in a chosen area of the industry. Throughout, they receive coaching in personal leadership, craftsmanship, and entrepreneurship, and practise their English in class, through role plays, and on the job.",
+      "image": "/assets/tree_nursery_seedlings.jpg",
+      "imageAlt": "Tree nursery seedlings, community environmental project"
+    },
+    "vision": {
+      "image": "/assets/community_women_hillside_waving.jpg",
+      "imageAlt": "Community members in the Usambara Mountains",
+      "eyebrow": "Our vision",
+      "title": "A future where young people choose to stay.",
+      "body": "Thriving businesses anchor the Usambara economy. By empowering local youth with practical skills, investing in promising scale-ups, engaging donors through Ubuntu Leadership Trips, and delivering demand-driven ULP Short Courses, the four pillars strengthen local enterprise, create employment, and generate lasting prosperity for the broader community.",
+      "curriculumCta": "The curriculum",
+      "partnersCta": "Our partners"
+    }
+  },
+  "ourCurriculum": {
+    "header": {
+      "eyebrow": "The curriculum",
+      "title": "The Curriculum"
+    },
+    "intro": {
+      "bodyStart": "The ULP Business School partners with",
+      "bodyPartner": "Ukarimu",
+      "bodyEnd": ", a Uganda-based hospitality training organisation, which provides a proven and comprehensive curriculum for our students. With their expertise and ready-made training materials, we ensure that our participants receive high-quality, industry-relevant education that equips them with the skills to succeed in the hospitality sector. This collaboration plays a key role in empowering youth in the Usambara region, while supporting the growth of the local economy.",
+      "image": "/assets/kitchen_team_photo.jpg",
+      "imageAlt": "Kitchen team at the ULP Business School, hospitality training in action"
+    },
+    "whatWeAre": {
+      "eyebrow": "What we are",
+      "title": "A one-year training & coaching programme in hospitality.",
+      "intro": "Four things define the ULP Business School experience:",
+      "cards": [
+        {
+          "label": "Timeline",
+          "value": "Jan - Dec",
+          "detail": "One full annual cycle, from first-day orientation through to graduation."
+        },
+        {
+          "label": "Location",
+          "value": "ULP Training Centre",
+          "detail": "On the ground in the Usambara region, at participating hotels and the ULP training facility."
+        },
+        {
+          "label": "Focus",
+          "value": "Hospitality",
+          "detail": "Real, in-demand skills across hotel departments, from front-of-house to food & beverage to management."
+        },
+        {
+          "label": "Audience",
+          "value": "Ages 18 - 28",
+          "detail": "School leavers from the Usambara region who want to build a professional future close to home."
+        }
+      ]
+    },
+    "phases": {
+      "eyebrow": "The curriculum",
+      "title": "What the programme does",
+      "items": [
+        {
+          "phase": "Phase one",
+          "sub": "Low season",
+          "desc": "General training across all hotel departments, front desk, housekeeping, food & beverage, and more."
+        },
+        {
+          "phase": "Phase two",
+          "sub": "Peak season",
+          "desc": "Work as trained professionals in real hotel operations, applying skills under live conditions."
+        },
+        {
+          "phase": "Phase three",
+          "sub": "Sept - Dec",
+          "desc": "Specialisation in a chosen area of the industry, culminating in a graduation project."
+        }
+      ],
+      "throughoutLabel": "Throughout",
+      "throughoutBody": "Coaching in personal leadership, craftsmanship and entrepreneurship, plus practising English in class, through role plays, and on the job. The result is a broad, diverse, hands-on curriculum."
+    },
+    "community": {
+      "image": "/assets/cooking_together_around_fire.jpg",
+      "imageAlt": "Cooking together around the fire, community and culture at the heart of ULP",
+      "eyebrow": "Community & culture",
+      "quote": "\"Learning happens in the kitchen, around the fire, and in every shared moment.\""
+    }
+  },
+  "shortCourses": {
+    "hero": {
+      "eyebrow": "ULP Short Courses",
+      "titleLine1": "Practical Knowledge for",
+      "titleLine2": "Entrepreneurs & Professionals",
+      "intro": "ULP develops and delivers short courses tailored to the current needs of entrepreneurs and organisations within our network. Our programmes are practice-oriented, immediately applicable, and led by experienced professionals."
+    },
+    "offering": {
+      "eyebrow": "The offering",
+      "title": "Seven areas of expertise",
+      "courses": [
+        {
+          "title": "Finance",
+          "desc": "Practical financial management skills for entrepreneurs and small business owners."
+        },
+        {
+          "title": "Entrepreneurship",
+          "desc": "Foundations of starting and growing a sustainable business in the local economy."
+        },
+        {
+          "title": "Management & Leadership",
+          "desc": "Tools and frameworks for leading teams and organisations with confidence."
+        },
+        {
+          "title": "Hospitality",
+          "desc": "Industry-specific skills for hotels, lodges, and service businesses in the region."
+        },
+        {
+          "title": "Cooking Clinics",
+          "desc": "Hands-on culinary training led by experienced chefs, tailored to local and international standards."
+        },
+        {
+          "title": "Personal Hygiene",
+          "desc": "Professional standards in personal presentation and hygiene for hospitality and service roles."
+        },
+        {
+          "title": "Interior Architecture",
+          "desc": "Practical interior design and space planning for hospitality and commercial environments."
+        }
+      ]
+    },
+    "approach": {
+      "eyebrow": "Our approach",
+      "title": "Demand-driven & directly applicable",
+      "paragraphs": [
+        "Each short course is developed demand-driven and contributes to the professional development of employees and entrepreneurs, the strengthening of organisations, and the sustainable growth of the local economy.",
+        "A short course typically takes the form of an intensive clinic spanning several days, during which participants gain directly applicable knowledge and skills."
+      ]
+    },
+    "whoWeServe": {
+      "eyebrow": "Who we serve",
+      "title": "Hospitality & beyond",
+      "paragraphs": [
+        "Our expertise lies in the hospitality sector. Leveraging ULP Business School's extensive network, we develop and deliver hands-on short courses for hotels, hotel chains, and other organisations.",
+        "We offer comparable short courses to the entrepreneurs connected to ULP Invest, ensuring that our knowledge reaches the full breadth of the ULP network."
+      ]
+    },
+    "cta": {
+      "eyebrow": "Get in touch",
+      "title": "Interested in a short course for your team?",
+      "body": "We work with organisations and entrepreneurs to develop tailored programmes. Reach out to discuss what would work best for your context.",
+      "button": "Contact Us"
+    }
+  },
+  "leadershipTrip": {
+    "hero": {
+      "backgroundImage": "/assets/community_gathering_roundhouse.jpg",
+      "eyebrow": "Get involved",
+      "title": "The Ubuntu Leadership Trip",
+      "subtitle": "An annual immersive journey to the Usambara Mountains, for leaders who want to give back while growing."
+    },
+    "intro": {
+      "eyebrow": "About the trip",
+      "title": "A week that changes perspective",
+      "leadStart": "The",
+      "leadStrong": "Ubuntu Leadership Trip",
+      "leadEnd": "is an annual week-long experience in Tanzania's Usambara Mountains, designed for European professionals and leaders who want to combine personal growth with meaningful impact.",
+      "paragraphs": [
+        "You will hike through misty cloud forests, share meals with local community members, visit the ULP Business School, and take part in guided leadership reflection sessions, all while your participation directly funds the program.",
+        "It is not a typical holiday. It is a journey of connection, to a place, to a community, and to yourself."
+      ],
+      "cta": "Register your interest",
+      "imageHike": "/assets/misty_mountain_hike.jpg",
+      "imageHikeAlt": "Misty mountain hike through the Usambara cloud forest",
+      "imageHikeMobile": "/assets/rain_over_valley_viewpoint.jpg",
+      "imageHikeMobileAlt": "Rain over the Usambara valley viewpoint",
+      "imageSunsetDinner": "/assets/sunset_dinner_mountain_view.jpg",
+      "imageSunsetDinnerAlt": "Sunset dinner with mountain views over the Usambara",
+      "imageCommunity": "/assets/community_women_hillside_waving.jpg",
+      "imageCommunityAlt": "Community women waving on the Usambara hillside"
+    },
+    "highlights": {
+      "eyebrow": "What to expect",
+      "title": "Six days of purpose",
+      "intro": "Every trip is different, but these are the experiences that define the Ubuntu Leadership journey.",
+      "items": [
+        {
+          "title": "Immersive nature",
+          "desc": "Guided hikes through the Usambara cloud forests, with breathtaking views above the clouds."
+        },
+        {
+          "title": "Community connection",
+          "desc": "Meet local entrepreneurs, visit the ULP Business School, and see the program's impact first-hand."
+        },
+        {
+          "title": "Reflection & coaching",
+          "desc": "Structured sessions for personal leadership reflection, facilitated by experienced coaches."
+        },
+        {
+          "title": "Culture & cuisine",
+          "desc": "Shared meals, campfire evenings, and authentic Tanzanian hospitality at every turn."
+        },
+        {
+          "title": "Meaningful contribution",
+          "desc": "Your participation directly funds the ULP Business School and the ULP Investment Fund."
+        },
+        {
+          "title": "Optional safari extension",
+          "desc": "Extend your trip with a Serengeti or Kilimanjaro experience, we can help arrange it."
+        }
+      ]
+    },
+    "register": {
+      "eyebrow": "Next trip",
+      "title": "Interested in joining?",
+      "body": "The Ubuntu Leadership Trip runs annually, typically in the autumn. Places are limited to keep the experience intimate and meaningful. If you are interested in joining the next trip, get in touch and we will send you full details on dates, pricing, and what to expect.",
+      "contactLabel": "MORE INFORMATION",
+      "contactName": "Hans Valkenburg",
+      "primaryCta": "Get in touch",
+      "secondaryCta": "Support the program",
+      "contactPhone": "+31 6 22 47 56 58",
+      "contactEmail": "info@ubuntuleadershipprogram.nl"
+    }
+  },
+  "blogLeadershipTrip2026": {
+    "header": {
+      "date": "June 11, 2026",
+      "author": "Janne",
+      "title": "Join the Ubuntu Leadership Trip 2026",
+      "subtitle": "Adventure, connection, and reflection, in the most beautiful places in Tanzania."
+    },
+    "heroImage": "/assets/sunset_dinner_mountain_view.jpg",
+    "heroImageAlt": "Sunset dinner with mountain views, Ubuntu Leadership Trip",
+    "body": {
+      "leadStart": "The",
+      "leadStrong": "Ubuntu Leadership Trip 2026",
+      "leadEnd": "takes place in the first week of November. After three highly successful retreats, it will once again be a celebration of adventure, connection, and reflection.",
+      "quote": "\"Ubuntu Leadership, leading in relationship with the other.\"",
+      "themeStart": "This time, we focus on the theme:",
+      "themeEm": "Ubuntu Leadership, leading in relationship with the other.",
+      "themeMiddle": "Organisational expert, leadership coach, and author of several books on the subject,",
+      "themeStrong": "Margreet Oostenbrink",
+      "themeEnd": ", will guide us through the theme.",
+      "programme": "The programme is, as always, dynamic, you will see and experience a great deal, but there is also plenty of space for rest, reflection, and personal development as an entrepreneur, executive, professional, and as a person.",
+      "communityImage": "/assets/community_gathering_roundhouse.jpg",
+      "communityImageAlt": "Community gathering at the roundhouse, Ubuntu Leadership Trip"
+    },
+    "participation": {
+      "title": "Your participation makes it possible",
+      "schoolStart": "With your participation, you make the",
+      "schoolStrong": "ULP Business School",
+      "schoolEnd": "possible: our business school in Tanzania that turns school leavers into skilled professionals and entrepreneurs through a one-year leadership and craftsmanship training.",
+      "donationStrong": "Half of your contribution is a donation",
+      "donationEnd": "to this programme. Your investment is tax-deductible, either as management training or as a charitable gift. The amount includes a flight ticket."
+    },
+    "facts": {
+      "items": [
+        {
+          "label": "When",
+          "value": "First week of November 2026"
+        },
+        {
+          "label": "Where",
+          "value": "Tanzania, Usambara Mountains"
+        },
+        {
+          "label": "Includes",
+          "value": "Flight ticket + tax-deductible donation"
+        }
+      ]
+    },
+    "closing": {
+      "body": "I hope to travel with you to the most beautiful places in Tanzania, for an unforgettable journey. Especially in these uncertain times, it is important to make space for this and to keep building a better world together.",
+      "registerCta": "Register your interest ↗",
+      "aboutCta": "About the Leadership Trip"
+    },
+    "byline": {
+      "name": "Janne",
+      "organisation": "Ubuntu Leadership Program"
+    },
+    "backLink": "← Back to News & Stories"
+  },
+  "blogLeadershipTrip": {
+    "header": {
+      "date": "April 7, 2025",
+      "author": "Kees Huibers",
+      "title": "Join the Ubuntu Leadership Trip 2025"
+    },
+    "heroImage": "/assets/community_gathering_roundhouse.jpg",
+    "heroImageAlt": "Community gathering at the roundhouse in the Usambara Mountains",
+    "body": {
+      "leadStrong": "Join the Ubuntu Leadership Trip 2025",
+      "leadEnd": "from November 1st to 8th, a week-long journey through Tanzania's Usambara Mountains, combining personal leadership reflection with a genuine connection to the local community.",
+      "paragraphs": [
+        "The trip takes you deep into the cloud forests of the Usambara, where you will hike, share meals with local families, visit the ULP Business School, and take part in guided coaching sessions. It is an experience that challenges your perspective and leaves a lasting impression.",
+        "By joining, you also directly support the ULP Business School and the ULP Investment Fund, your participation fee funds the program that gives young people in the Usambara region the skills and coaching to build a future at home.",
+        "Places are limited. If you are interested in joining or would like more information, please get in touch:"
+      ]
+    },
+    "contact": {
+      "label": "MORE INFORMATION",
+      "name": "Hans Valkenburg",
+      "phone": "+31 6 22 47 56 58",
+      "email": "info@ubuntuleadershipprogram.nl"
+    },
+    "learnMoreCta": "Learn more about the trip",
+    "backCta": "← Back to News & Stories"
+  },
+  "meetOurTeam": {
+    "header": {
+      "eyebrow": "About us",
+      "title": "Meet Our Team"
+    },
+    "intro": "The Ubuntu Leadership Team consists of both Dutch and Tanzanian team members, united by a shared mission and vision to create a brighter future for the Usambara region.",
+    "linkedinCta": "LinkedIn →",
+    "tanzania": {
+      "label": "Tanzania",
+      "members": [
+        {
+          "name": "Shakira Nasser",
+          "title": "Manager & Mentor",
+          "image": "/assets/team-shakira.jpg",
+          "imageAlt": "Shakira Nasser"
+        },
+        {
+          "name": "Nasra Kigombola",
+          "title": "Teacher, Mentor & Support",
+          "image": "/assets/nasra-kigombola.png",
+          "imageAlt": "Nasra Kigombola"
+        },
+        {
+          "name": "Kaspary Felix Mponda",
+          "title": "Staff Mabughai & ULP Programme Coordinator",
+          "image": "/assets/kaspari.png",
+          "imageAlt": "Kaspary Felix Mponda"
+        }
+      ]
+    },
+    "netherlands": {
+      "label": "The Netherlands",
+      "members": [
+        {
+          "name": "Hans Valkenburg",
+          "title": "Support Team Netherlands",
+          "image": "/assets/team-hans.jpg",
+          "imageAlt": "Hans Valkenburg"
+        },
+        {
+          "name": "Janne Reedeker",
+          "title": "Support Team Netherlands",
+          "image": "/assets/janne-reedeker.png",
+          "imageAlt": "Janne Reedeker"
+        }
+      ]
+    }
+  },
+  "ourPartners": {
+    "header": {
+      "eyebrow": "Partners",
+      "title": "Our Partners"
+    },
+    "intro": "The Ubuntu Leadership Program is a proud partner of the following organisations, each contributing their expertise to empower youth in the Usambara region.",
+    "visitCta": "Visit website →",
+    "items": [
+      {
+        "name": "Ukarimu Academy",
+        "description": "Leadership and hospitality academy in the Usambara region.",
+        "logo": "/assets/ukarimu-academy.png",
+        "logoAlt": "Ukarimu Academy logo"
+      },
+      {
+        "name": "Mabughai Technical College",
+        "description": "Community development technical training institute since 2007.",
+        "logo": "/assets/mabughai-technical-college.png",
+        "logoAlt": "Mabughai Technical College logo"
+      },
+      {
+        "name": "Lawns Hotel",
+        "description": "Boutique hotel in Lushoto providing on-the-job training placements.",
+        "logo": "/assets/lawns-hotel.png",
+        "logoAlt": "Lawns Hotel logo"
+      },
+      {
+        "name": "Shambaa Ecotours",
+        "description": "Cultural and eco-tourism operator in the Usambara Mountains.",
+        "logo": "/assets/shambaa-ecotours.png",
+        "logoAlt": "Shambaa Ecotours logo"
+      },
+      {
+        "name": "Mambo ViewPoint",
+        "description": "Eco lodge and community hub in the Usambara highlands.",
+        "logo": "/assets/mambo-viewpoint.png",
+        "logoAlt": "Mambo ViewPoint logo"
+      },
+      {
+        "name": "Usambara Ecotours",
+        "description": "Cultural tourism connecting visitors with local Usambara communities.",
+        "logo": "/assets/usambara-ecotours.png",
+        "logoAlt": "Usambara Ecotours logo"
+      },
+      {
+        "name": "Youth Peacemakers Tanzania",
+        "description": "Youth-led organisation promoting peace and development in Lushoto.",
+        "logo": "/assets/youth-peacemakers.png",
+        "logoAlt": "Youth Peacemakers Tanzania logo"
+      },
+      {
+        "name": "PUM Netherlands",
+        "description": "Dutch organisation connecting senior experts with entrepreneurs in developing countries.",
+        "logo": "/assets/pum-netherlands.png",
+        "logoAlt": "PUM Netherlands logo"
+      }
+    ]
+  },
+  "anbiRapportage": {
+    "header": {
+      "eyebrow": "Transparency & Accountability",
+      "title": "ANBI Report"
+    },
+    "whatIs": {
+      "title": "What is ANBI?",
+      "lead": {
+        "term": "ANBI",
+        "textAfterTerm": "stands for",
+        "termFull": "Algemeen Nut Beogende Instelling",
+        "textBeforeLink": ", a Dutch designation for organisations that serve the general public interest. The Ubuntu Leadership Program has been officially recognised as an ANBI by the",
+        "linkText": "Dutch Tax Authority (Belastingdienst)",
+        "textAfterLink": "."
+      },
+      "donors": {
+        "textBefore": "This status is relevant primarily for",
+        "highlight": "donors based in the Netherlands",
+        "textAfter": ". It means that donations made to ULP are fully tax-deductible under Dutch income tax law. In other words, if you donate to ULP, you can deduct the full amount from your taxable income, making your support go even further."
+      },
+      "publication": "As an ANBI organisation, we are required to publish certain information about our finances, governance, and activities. Our annual ANBI report is available below for full transparency."
+    },
+    "keyFacts": {
+      "items": [
+        {
+          "label": "Tax-deductible donations",
+          "desc": "Dutch residents can deduct 100% of their donation from taxable income."
+        },
+        {
+          "label": "Public interest mission",
+          "desc": "ULP is officially recognised as serving the general public interest."
+        },
+        {
+          "label": "Full transparency",
+          "desc": "We publish our financials, governance, and activities annually."
+        }
+      ]
+    },
+    "download": {
+      "title": "Download our ANBI Report",
+      "body": "The document below contains our official ANBI publication, including organisational details, financial overview, and a summary of our activities and goals.",
+      "cta": "Download ANBI Report (PDF)"
+    }
+  },
+  "aboutUs": {
+    "header": {
+      "eyebrow": "About us",
+      "title": "Mission, Vision and Policy Plan"
+    },
+    "mission": {
+      "eyebrow": "Our mission",
+      "title": "Our Mission",
+      "body": "ULP addresses the need for stronger, more resilient businesses in the Usambara region by investing directly in local entrepreneurs. The core challenges being tackled are limited access to capital, business skills, and professional networks for promising entrepreneurs in this remote area. By combining financial investment with targeted coaching and short practical training, ULP helps affiliated entrepreneurs develop and qualify their businesses, contributing to a more dynamic and sustainable local economy."
+    },
+    "vision": {
+      "eyebrow": "Our vision",
+      "title": "Our Vision",
+      "body": "Through investing in and empowering local entrepreneurs with capital, targeted training, and hands-on coaching, the Ubuntu Leadership Program envisions a future where thriving businesses anchor the Usambara economy. By building a growing network of supported entrepreneurs the program aims to strengthen local enterprise, create employment, and generate sustainable prosperity for the broader community."
+    },
+    "policy": {
+      "eyebrow": "Policy plan",
+      "title": "Policy Plan",
+      "body": "The policy plan of ULP outlines the mission, vision, key activities, and governance of the foundation. It details how resources are managed with all funds supporting the mission of empowering young people in the Usambara region.",
+      "documents": [
+        {
+          "label": "Policy Plan ULP Foundation",
+          "sub": "Download the full policy plan (PDF)",
+          "cta": "Download"
+        }
+      ]
+    }
+  },
+  "contactUs": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Contact Us"
+    },
+    "intro": {
+      "eyebrow": "Get in touch",
+      "title": "We'd love to hear from you"
+    },
+    "details": {
+      "addressLabel": "Address",
+      "addressLines": [
+        "Oudegracht 417",
+        "3511 PJ Utrecht",
+        "The Netherlands"
+      ],
+      "phoneLabel": "Phone",
+      "phone": "+31 6 22 47 56 58",
+      "emailLabel": "Email",
+      "email": "info@ubuntuleadershipprogram.nl",
+      "bankLabel": "Bank Account",
+      "bankAccount": "NL56 RABO 0323 7422 70"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "donate": {
+    "hero": {
+      "eyebrow": "Get involved",
+      "title": "Donate"
+    },
+    "body": {
+      "text": "Your generous donation helps us provide vital training and opportunities to the youth in the Usambara Mountains. With your support, we can continue to create skilled professionals, foster local entrepreneurship, and contribute to the sustainable development of the region. Every contribution, big or small, makes a lasting impact.",
+      "cta": "Contact us"
+    },
+    "bank": {
+      "label": "BANK ACCOUNT",
+      "accountNumber": "NL56 RABO 0323 7422 70",
+      "accountName": "Ubuntu Leadership Program Foundation"
+    }
+  },
+  "history": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "History"
+    },
+    "body": {
+      "paragraphs": [
+        "The Ubuntu Leadership Program was founded by a group of Dutch professionals with a shared conviction: that sustainable development in the Usambara Mountains of Tanzania requires investing in local people, not importing solutions from outside.",
+        "Starting with a small investment fund and a vision for a business school rooted in the local hospitality sector, ULP has grown into a multi-pillar program that combines education, entrepreneurship support, and international engagement."
+      ],
+      "cta": "Mission, Vision & Policy Plan"
+    }
+  },
+  "participate": {
+    "hero": {
+      "eyebrow": "Get involved",
+      "title": "Participate"
+    },
+    "body": {
+      "text": "Are you as excited as we are about the Ubuntu Leadership Program? If you'd like to get involved and make a difference, we'd love to have you as a participant! Whether you can offer your expertise, time, or skills, your support will help empower youth in the Usambara region. Please don't hesitate to reach out to us!",
+      "cta": "Contact us"
+    }
+  },
+  "partnership": {
+    "hero": {
+      "eyebrow": "Get involved",
+      "title": "Partnership"
+    },
+    "body": {
+      "text": "Are you an organisation or business interested in partnering with us? Together, we can create lasting change and make a meaningful impact in the Usambara region. Whether through expertise, resources, or collaborative initiatives, your partnership can help drive the success of the Ubuntu Leadership Program and empower future leaders.",
+      "cta": "Contact us"
+    }
+  },
+  "blogTrueLeader": {
+    "header": {
+      "date": "April 8, 2026",
+      "author": "Kees Huibers",
+      "title": "A true Ubuntu leader"
+    },
+    "body": {
+      "paragraphs": [
+        "Meet Anna. From an underprivileged background to becoming an entrepreneur. Her journey is truly inspiring. After completing a one-year program at the ULP Business School, followed by an investment from ULP Invest, she successfully launched her own restaurant and catering service in Lushoto, Tanzania. Built entirely from the ground up. Her story is a powerful testament to resilience, determination, and the transformative power of opportunity. But above all, it is a story of strong female Ubuntu leadership.",
+        "Now, meet Immanuel Kant. In the 18th century this influential philosopher wrote that \"enlightenment is man's emergence from his self-imposed immaturity.\" In today's Trump-era, we seem to be drifting back into a self-imposed immaturity. One shaped by fear and division. Numbed by social media and overwhelmed by a constant stream of negative news, many of us Europeans feel paralyzed. As though our ability to think and act independently has been eroded.",
+        "Yet Anna shows us that another path is possible: one grounded in trust, in faith in one another, and in the willingness to work together. The Ubuntu Leadership Program (ULP) chose that path and wants to build a better world together."
+      ],
+      "backCta": "← Back to News & Stories"
+    }
+  },
+  "blogEnglishClasses": {
+    "header": {
+      "date": "April 1, 2025",
+      "author": "Kees Huibers",
+      "title": "How English Classes Transform Our Trainees"
+    },
+    "body": {
+      "intro": [
+        "In Tanzania's growing tourism and hospitality industry, strong English skills are essential. From welcoming guests at lodges to providing top-notch service in restaurants, effective communication makes all the difference.",
+        "Recognising that English proficiency is a challenge in the Usambara region, the Ubuntu Leadership Program introduced daily English classes for our trainees. Led by Nasra, a native from Lushoto with hospitality experience, these lessons have been a game-changer."
+      ],
+      "confidence": {
+        "heading": "Boosting Confidence & Career Opportunities",
+        "text": "Since English knowledge is a key selection criterion, we knew structured training was necessary. The impact has been clear: our trainees are improving their language skills and gaining the confidence to interact with international guests professionally."
+      },
+      "lookingAhead": {
+        "heading": "Looking Ahead: Strengthening Our Training",
+        "text": "As this is our pilot year, we're already planning improvements for the next traineeship. In the coming year, we aim to:",
+        "goals": [
+          "Organise an intensive English course before training-on-the-job begins.",
+          "Continue daily one-hour English sessions to ensure ongoing progress."
+        ]
+      },
+      "closing": "By investing in English training for hospitality and tourism, we are preparing young professionals for a brighter future in the industry.",
+      "supportText": "Want to support this initiative?",
+      "supportCta": "Contact us!",
+      "backCta": "← Back to News & Stories"
+    }
+  },
+  "layout": {
+    "footer": {
+      "tagline": "A business school, an investment fund, leadership trips and short courses in the Usambara Mountains, Tanzania.",
+      "quickLinksHeading": "Quick Links",
+      "contactHeading": "Contact",
+      "addressLines": [
+        "Oudegracht 417",
+        "3511 PJ Utrecht",
+        "The Netherlands"
+      ],
+      "phone": "+31 6 22 47 56 58",
+      "email": "info@ubuntuleadershipprogram.nl",
+      "bank": "Bank: NL56 RABO 0323 7422 70",
+      "copyright": "Ubuntu Leadership Program Foundation. All rights reserved."
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page Not Found",
+    "messageLines": [
+      "Sorry, the page you are looking for doesn't exist.",
+      "It may have been moved or deleted."
+    ],
+    "buttonText": "Go Home"
   }
 }

@@ -1,13 +1,17 @@
 /**
  * Blog post, Ubuntu Leadership Trip
  * Design: Warm Savanna Editorial
+ *
+ * All copy and imagery come from content.json so they can be edited in the
+ * Mirantic CMS. Links, contact details and design stay in code.
  */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import content from "@/content.json";
 
-const IMG_ROUNDHOUSE = "/assets/community_gathering_roundhouse.jpg";
+const c = content.blogLeadershipTrip;
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,11 +31,11 @@ export default function BlogLeadershipTrip() {
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }}>April 7, 2025</span>
-            <span className="text-xs" style={{ color: "#9A8A72" }}>by Kees Huibers</span>
+            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogLeadershipTrip.header.date">{c.header.date}</span>
+            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogLeadershipTrip.header.author">{c.header.author}</span></span>
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }}>
-            Join the Ubuntu Leadership Trip 2025
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogLeadershipTrip.header.title">
+            {c.header.title}
           </h1>
         </div>
       </section>
@@ -42,40 +46,38 @@ export default function BlogLeadershipTrip() {
           <FadeSection>
             {/* Hero image */}
             <img
-              src={IMG_ROUNDHOUSE}
-              alt="Community gathering at the roundhouse in the Usambara Mountains"
+              src={c.heroImage}
+              alt={c.heroImageAlt}
               className="w-full h-64 object-cover mb-8"
               style={{ objectPosition: "center 40%" }}
+              data-cms-field="blogLeadershipTrip.heroImage"
             />
 
             <div className="prose max-w-none" style={{ fontFamily: "'Source Serif 4', Georgia, serif", color: "#2C2416", lineHeight: 1.8 }}>
               <p>
-                <strong>Join the Ubuntu Leadership Trip 2025</strong> from November 1st to 8th, a week-long journey through Tanzania's Usambara Mountains, combining personal leadership reflection with a genuine connection to the local community.
+                <strong data-cms-field="blogLeadershipTrip.body.leadStrong">{c.body.leadStrong}</strong>{" "}
+                <span data-cms-field="blogLeadershipTrip.body.leadEnd">{c.body.leadEnd}</span>
               </p>
-              <p>
-                The trip takes you deep into the cloud forests of the Usambara, where you will hike, share meals with local families, visit the ULP Business School, and take part in guided coaching sessions. It is an experience that challenges your perspective and leaves a lasting impression.
-              </p>
-              <p>
-                By joining, you also directly support the ULP Business School and the ULP Investment Fund, your participation fee funds the program that gives young people in the Usambara region the skills and coaching to build a future at home.
-              </p>
-              <p>
-                Places are limited. If you are interested in joining or would like more information, please get in touch:
-              </p>
+              {c.body.paragraphs.map((text, i) => (
+                <p key={i} data-cms-field={`blogLeadershipTrip.body.paragraphs[${i}]`}>
+                  {text}
+                </p>
+              ))}
             </div>
 
             {/* Contact box */}
             <div className="p-5 my-8" style={{ backgroundColor: "#FDFAF4", border: "1px solid #D9CDB8" }}>
-              <p className="text-sm font-semibold text-[#2C2416] mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }}>MORE INFORMATION</p>
+              <p className="text-sm font-semibold text-[#2C2416] mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field="blogLeadershipTrip.contact.label">{c.contact.label}</p>
               <p className="text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-                Hans Valkenburg<br />
-                <a href="tel:+31622475658" className="hover:text-[#D4521A] transition-colors">+31 6 22 47 56 58</a><br />
-                <a href="mailto:info@ubuntuleadershipprogram.nl" className="hover:text-[#D4521A] transition-colors">info@ubuntuleadershipprogram.nl</a>
+                <span data-cms-field="blogLeadershipTrip.contact.name">{c.contact.name}</span><br />
+                <a href={`tel:${c.contact.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.phone">{c.contact.phone}</a><br />
+                <a href={`mailto:${c.contact.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.email">{c.contact.email}</a>
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 mt-10">
-              <Link href="/407-2/" className="ulp-btn">Learn more about the trip</Link>
-              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline">← Back to News &amp; Stories</Link>
+              <Link href="/407-2/" className="ulp-btn" data-cms-field="blogLeadershipTrip.learnMoreCta">{c.learnMoreCta}</Link>
+              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline" data-cms-field="blogLeadershipTrip.backCta">{c.backCta}</Link>
             </div>
           </FadeSection>
         </div>

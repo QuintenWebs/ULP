@@ -1,5 +1,16 @@
+/*
+ * ANBI report page, /450-2/
+ * Sections: header, what is ANBI, key facts, report download
+ *
+ * All copy comes from content.json so it can be edited in the Mirantic CMS.
+ * Anything structural (PDF and Belastingdienst links, colours, layout) stays in code.
+ */
+
 import { useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
+import content from "@/content.json";
+
+const c = content.anbiRapportage;
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,9 +33,9 @@ export default function AnbiRapportage() {
       {/* Header */}
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block">Transparency &amp; Accountability</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }}>
-            ANBI Report
+          <span className="ulp-label mb-5 inline-block" data-cms-field="anbiRapportage.header.eyebrow">{c.header.eyebrow}</span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="anbiRapportage.header.title">
+            {c.header.title}
           </h1>
         </div>
       </section>
@@ -33,43 +44,46 @@ export default function AnbiRapportage() {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container max-w-3xl">
           <FadeSection>
-            <h2 className="ulp-section-title mb-4">What is ANBI?</h2>
+            <h2 className="ulp-section-title mb-4" data-cms-field="anbiRapportage.whatIs.title">{c.whatIs.title}</h2>
             <hr className="ulp-rule mb-6" />
             <p className="text-[#2C2416] text-lg leading-relaxed mb-5" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              <strong>ANBI</strong> stands for <em>Algemeen Nut Beogende Instelling</em>, a Dutch designation for organisations that serve the general public interest. The Ubuntu Leadership Program has been officially recognised as an ANBI by the <a href={ANBI_GOV_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#D4521A", textDecoration: "underline" }}>Dutch Tax Authority (Belastingdienst)</a>.
+              <strong data-cms-field="anbiRapportage.whatIs.lead.term">{c.whatIs.lead.term}</strong>{" "}
+              <span data-cms-field="anbiRapportage.whatIs.lead.textAfterTerm">{c.whatIs.lead.textAfterTerm}</span>{" "}
+              <em data-cms-field="anbiRapportage.whatIs.lead.termFull">{c.whatIs.lead.termFull}</em>
+              <span data-cms-field="anbiRapportage.whatIs.lead.textBeforeLink">{c.whatIs.lead.textBeforeLink}</span>{" "}
+              <a href={ANBI_GOV_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#D4521A", textDecoration: "underline" }} data-cms-field="anbiRapportage.whatIs.lead.linkText">{c.whatIs.lead.linkText}</a>
+              <span data-cms-field="anbiRapportage.whatIs.lead.textAfterLink">{c.whatIs.lead.textAfterLink}</span>
             </p>
             <p className="text-[#2C2416] leading-relaxed mb-5" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              This status is relevant primarily for <strong>donors based in the Netherlands</strong>. It means that donations made to ULP are fully tax-deductible under Dutch income tax law. In other words, if you donate to ULP, you can deduct the full amount from your taxable income, making your support go even further.
+              <span data-cms-field="anbiRapportage.whatIs.donors.textBefore">{c.whatIs.donors.textBefore}</span>{" "}
+              <strong data-cms-field="anbiRapportage.whatIs.donors.highlight">{c.whatIs.donors.highlight}</strong>
+              <span data-cms-field="anbiRapportage.whatIs.donors.textAfter">{c.whatIs.donors.textAfter}</span>
             </p>
-            <p className="text-[#2C2416] leading-relaxed mb-10" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              As an ANBI organisation, we are required to publish certain information about our finances, governance, and activities. Our annual ANBI report is available below for full transparency.
+            <p className="text-[#2C2416] leading-relaxed mb-10" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="anbiRapportage.whatIs.publication">
+              {c.whatIs.publication}
             </p>
 
             {/* Key facts */}
             <div className="grid sm:grid-cols-3 gap-6 mb-12">
-              {[
-                { label: "Tax-deductible donations", desc: "Dutch residents can deduct 100% of their donation from taxable income." },
-                { label: "Public interest mission", desc: "ULP is officially recognised as serving the general public interest." },
-                { label: "Full transparency", desc: "We publish our financials, governance, and activities annually." },
-              ].map((item) => (
+              {c.keyFacts.items.map((item, i) => (
                 <div key={item.label} className="p-5 border-t-4" style={{ borderTopColor: "#D4521A", backgroundColor: "#FDFAF4" }}>
-                  <h3 className="font-bold mb-2 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1rem" }}>{item.label}</h3>
-                  <p className="text-sm text-[#6B5B45] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>{item.desc}</p>
+                  <h3 className="font-bold mb-2 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1rem" }} data-cms-field={`anbiRapportage.keyFacts.items[${i}].label`}>{item.label}</h3>
+                  <p className="text-sm text-[#6B5B45] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`anbiRapportage.keyFacts.items[${i}].desc`}>{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            <h3 className="font-bold text-[#2C2416] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.25rem" }}>
-              Download our ANBI Report
+            <h3 className="font-bold text-[#2C2416] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.25rem" }} data-cms-field="anbiRapportage.download.title">
+              {c.download.title}
             </h3>
-            <p className="text-[#6B5B45] mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              The document below contains our official ANBI publication, including organisational details, financial overview, and a summary of our activities and goals.
+            <p className="text-[#6B5B45] mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="anbiRapportage.download.body">
+              {c.download.body}
             </p>
             <a href={PDF_ANBI} target="_blank" rel="noopener noreferrer" className="ulp-btn inline-flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
               </svg>
-              Download ANBI Report (PDF)
+              <span data-cms-field="anbiRapportage.download.cta">{c.download.cta}</span>
             </a>
           </FadeSection>
         </div>

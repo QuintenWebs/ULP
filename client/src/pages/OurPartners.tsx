@@ -1,5 +1,16 @@
+/*
+ * Our partners page, /our-partners/
+ * Sections: header, intro, partner logo grid
+ *
+ * All copy and logos come from content.json so they can be edited in the
+ * Mirantic CMS. Anything structural (partner website links, layout) stays in code.
+ */
+
 import { useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
+import content from "@/content.json";
+
+const c = content.ourPartners;
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,31 +23,34 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
   return <div ref={ref} className="fade-up">{children}</div>;
 }
 
-const partners = [
-  { name: "Ukarimu Academy", url: "https://ukarimuacademy.org/", logo: "/assets/ukarimu-academy.png", description: "Leadership and hospitality academy in the Usambara region." },
-  { name: "Mabughai Technical College", url: "https://mabughai.ac.tz/", logo: "/assets/mabughai-technical-college.png", description: "Community development technical training institute since 2007." },
-  { name: "Lawns Hotel", url: "https://lawnshotel.com/", logo: "/assets/lawns-hotel.png", description: "Boutique hotel in Lushoto providing on-the-job training placements." },
-  { name: "Shambaa Ecotours", url: "https://shambaaecotours.co.tz/", logo: "/assets/shambaa-ecotours.png", description: "Cultural and eco-tourism operator in the Usambara Mountains." },
-  { name: "Mambo ViewPoint", url: "https://www.mamboviewpoint.org/", logo: "/assets/mambo-viewpoint.png", description: "Eco lodge and community hub in the Usambara highlands." },
-  { name: "Usambara Ecotours", url: "https://www.usambaraecotours.com/", logo: "/assets/usambara-ecotours.png", description: "Cultural tourism connecting visitors with local Usambara communities." },
-  { name: "Youth Peacemakers Tanzania", url: "https://youthpeacemakers.or.tz/", logo: "/assets/youth-peacemakers.png", description: "Youth-led organisation promoting peace and development in Lushoto." },
-  { name: "PUM Netherlands", url: "https://www.pum.nl/", logo: "/assets/pum-netherlands.png", description: "Dutch organisation connecting senior experts with entrepreneurs in developing countries." },
+// Partner websites belong to the code, merged with the editable copy by position.
+const PARTNER_DESIGN = [
+  { url: "https://ukarimuacademy.org/" },
+  { url: "https://mabughai.ac.tz/" },
+  { url: "https://lawnshotel.com/" },
+  { url: "https://shambaaecotours.co.tz/" },
+  { url: "https://www.mamboviewpoint.org/" },
+  { url: "https://www.usambaraecotours.com/" },
+  { url: "https://youthpeacemakers.or.tz/" },
+  { url: "https://www.pum.nl/" },
 ];
+
+const partners = c.items.map((item, i) => ({ ...PARTNER_DESIGN[i], ...item }));
 
 export default function OurPartners() {
   return (
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block">Partners</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }}>Our Partners</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="ourPartners.header.eyebrow">{c.header.eyebrow}</span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="ourPartners.header.title">{c.header.title}</h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container">
           <FadeSection>
-            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              The Ubuntu Leadership Program is a proud partner of the following organisations, each contributing their expertise to empower youth in the Usambara region.
+            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourPartners.intro">
+              {c.intro}
             </p>
           </FadeSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -55,21 +69,23 @@ export default function OurPartners() {
                   >
                     <img
                       src={p.logo}
-                      alt={p.name + " logo"}
+                      alt={p.logoAlt}
                       style={{ maxHeight: "80px", maxWidth: "100%", objectFit: "contain" }}
+                      data-cms-field={`ourPartners.items[${i}].logo`}
                     />
                   </div>
                   <p
                     className="font-semibold text-[#2C2416] text-sm mb-2"
                     style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}
+                    data-cms-field={`ourPartners.items[${i}].name`}
                   >
                     {p.name}
                   </p>
-                  <p className="text-xs text-[#6B5B45] leading-relaxed mb-3" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
+                  <p className="text-xs text-[#6B5B45] leading-relaxed mb-3" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourPartners.items[${i}].description`}>
                     {p.description}
                   </p>
-                  <span className="text-xs mt-auto" style={{ color: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}>
-                    Visit website →
+                  <span className="text-xs mt-auto" style={{ color: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field="ourPartners.visitCta">
+                    {c.visitCta}
                   </span>
                 </a>
               </FadeSection>

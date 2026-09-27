@@ -1,5 +1,16 @@
-import { useEffect, useRef } from "react";
+/*
+ * Contact Us page, /contact-us/
+ *
+ * All copy comes from content.json so it can be edited in the Mirantic CMS.
+ * Anything structural — social URLs, colours, layout —
+ * stays in code: the CMS edits content, not navigation or design.
+ */
+
+import { Fragment, useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
+import content from "@/content.json";
+
+const c = content.contactUs;
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -17,46 +28,53 @@ export default function ContactUs() {
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block">Contact</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }}>Contact Us</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="contactUs.hero.eyebrow">{c.hero.eyebrow}</span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="contactUs.hero.title">{c.hero.title}</h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container">
           <FadeSection>
-            <span className="ulp-label ulp-label-outline mb-5 inline-block">Get in touch</span>
-            <h2 className="ulp-section-title mb-10">We'd love to hear from you</h2>
+            <span className="ulp-label ulp-label-outline mb-5 inline-block" data-cms-field="contactUs.intro.eyebrow">{c.intro.eyebrow}</span>
+            <h2 className="ulp-section-title mb-10" data-cms-field="contactUs.intro.title">{c.intro.title}</h2>
           </FadeSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
             <FadeSection delay={60}>
               <div>
-                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Address</p>
-                <p className="text-[#2C2416] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>Oudegracht 417<br />3511 PJ Utrecht<br />The Netherlands</p>
+                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field="contactUs.details.addressLabel">{c.details.addressLabel}</p>
+                <p className="text-[#2C2416] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
+                  {c.details.addressLines.map((line, i) => (
+                    <Fragment key={i}>
+                      {i > 0 && <br />}
+                      <span data-cms-field={`contactUs.details.addressLines[${i}]`}>{line}</span>
+                    </Fragment>
+                  ))}
+                </p>
               </div>
             </FadeSection>
             <FadeSection delay={100}>
               <div>
-                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Phone</p>
-                <a href="tel:+31622475658" className="text-[#2C2416] hover:text-[#D4521A] transition-colors" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>+31 6 22 47 56 58</a>
+                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field="contactUs.details.phoneLabel">{c.details.phoneLabel}</p>
+                <a href={`tel:${c.details.phone.replace(/[^\d+]/g, "")}`} className="text-[#2C2416] hover:text-[#D4521A] transition-colors" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="contactUs.details.phone">{c.details.phone}</a>
               </div>
             </FadeSection>
             <FadeSection delay={140}>
               <div>
-                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Email</p>
-                <a href="mailto:info@ubuntuleadershipprogram.nl" className="text-[#2C2416] hover:text-[#D4521A] transition-colors break-all" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>info@ubuntuleadershipprogram.nl</a>
+                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field="contactUs.details.emailLabel">{c.details.emailLabel}</p>
+                <a href={`mailto:${c.details.email}`} className="text-[#2C2416] hover:text-[#D4521A] transition-colors break-all" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="contactUs.details.email">{c.details.email}</a>
               </div>
             </FadeSection>
             <FadeSection delay={180}>
               <div>
-                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Bank Account</p>
-                <p className="text-[#2C2416]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>NL56 RABO 0323 7422 70</p>
+                <p className="text-xs uppercase tracking-widest mb-2 text-[#D4521A]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field="contactUs.details.bankLabel">{c.details.bankLabel}</p>
+                <p className="text-[#2C2416]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="contactUs.details.bankAccount">{c.details.bankAccount}</p>
               </div>
             </FadeSection>
           </div>
           <FadeSection delay={220}>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/ubuntuleadershipprogram/" target="_blank" rel="noopener noreferrer" className="ulp-btn ulp-btn-outline text-sm">Instagram</a>
-              <a href="https://www.linkedin.com/company/ubuntu-leadership-program/" target="_blank" rel="noopener noreferrer" className="ulp-btn ulp-btn-outline text-sm">LinkedIn</a>
+              <a href="https://www.instagram.com/ubuntuleadershipprogram/" target="_blank" rel="noopener noreferrer" className="ulp-btn ulp-btn-outline text-sm" data-cms-field="contactUs.social.instagram">{c.social.instagram}</a>
+              <a href="https://www.linkedin.com/company/ubuntu-leadership-program/" target="_blank" rel="noopener noreferrer" className="ulp-btn ulp-btn-outline text-sm" data-cms-field="contactUs.social.linkedin">{c.social.linkedin}</a>
             </div>
           </FadeSection>
         </div>

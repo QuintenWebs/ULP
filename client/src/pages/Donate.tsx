@@ -1,6 +1,17 @@
+/*
+ * Donate page, /donate/
+ *
+ * All copy comes from content.json so it can be edited in the Mirantic CMS.
+ * Anything structural — links, colours, layout — stays in code: the CMS edits
+ * content, not navigation or design.
+ */
+
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import content from "@/content.json";
+
+const c = content.donate;
 
 function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,21 +29,25 @@ export default function Donate() {
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block">Get involved</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }}>Donate</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="donate.hero.eyebrow">{c.hero.eyebrow}</span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="donate.hero.title">{c.hero.title}</h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container max-w-2xl">
           <FadeSection>
-            <p className="text-[#2C2416] text-lg leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              Your generous donation helps us provide vital training and opportunities to the youth in the Usambara Mountains. With your support, we can continue to create skilled professionals, foster local entrepreneurship, and contribute to the sustainable development of the region. Every contribution, big or small, makes a lasting impact.
+            <p className="text-[#2C2416] text-lg leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="donate.body.text">
+              {c.body.text}
             </p>
             <div className="p-5 mb-8" style={{ backgroundColor: "#FDFAF4", border: "1px solid #D9CDB8" }}>
-              <p className="text-sm font-semibold text-[#2C2416] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }}>BANK ACCOUNT</p>
-              <p className="text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>NL56 RABO 0323 7422 70<br />Ubuntu Leadership Program Foundation</p>
+              <p className="text-sm font-semibold text-[#2C2416] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field="donate.bank.label">{c.bank.label}</p>
+              <p className="text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
+                <span data-cms-field="donate.bank.accountNumber">{c.bank.accountNumber}</span>
+                <br />
+                <span data-cms-field="donate.bank.accountName">{c.bank.accountName}</span>
+              </p>
             </div>
-            <Link href="/contact-us/" className="ulp-btn">Contact us</Link>
+            <Link href="/contact-us/" className="ulp-btn" data-cms-field="donate.body.cta">{c.body.cta}</Link>
           </FadeSection>
         </div>
       </section>

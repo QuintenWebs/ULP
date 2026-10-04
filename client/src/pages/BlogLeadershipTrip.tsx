@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.blogLeadershipTrip;
 
@@ -31,11 +32,11 @@ export default function BlogLeadershipTrip() {
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogLeadershipTrip.header.date">{c.header.date}</span>
-            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogLeadershipTrip.header.author">{c.header.author}</span></span>
+            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogLeadershipTrip.header.date" data-cms-rich><Rich text={c.header.date} /></span>
+            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogLeadershipTrip.header.author" data-cms-rich><Rich text={c.header.author} /></span></span>
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogLeadershipTrip.header.title">
-            {c.header.title}
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogLeadershipTrip.header.title" data-cms-rich>
+            <Rich text={c.header.title} />
           </h1>
         </div>
       </section>
@@ -55,29 +56,29 @@ export default function BlogLeadershipTrip() {
 
             <div className="prose max-w-none" style={{ fontFamily: "'Source Serif 4', Georgia, serif", color: "#2C2416", lineHeight: 1.8 }}>
               <p>
-                <strong data-cms-field="blogLeadershipTrip.body.leadStrong">{c.body.leadStrong}</strong>{" "}
-                <span data-cms-field="blogLeadershipTrip.body.leadEnd">{c.body.leadEnd}</span>
+                <strong data-cms-field="blogLeadershipTrip.body.leadStrong" data-cms-rich><Rich text={c.body.leadStrong} /></strong>{" "}
+                <span data-cms-field="blogLeadershipTrip.body.leadEnd" data-cms-rich><Rich text={c.body.leadEnd} /></span>
               </p>
               {c.body.paragraphs.map((text, i) => (
-                <p key={i} data-cms-field={`blogLeadershipTrip.body.paragraphs[${i}]`}>
-                  {text}
+                <p key={i} data-cms-field={`blogLeadershipTrip.body.paragraphs[${i}]`} data-cms-rich>
+                  <Rich text={text} />
                 </p>
               ))}
             </div>
 
             {/* Contact box */}
             <div className="p-5 my-8" style={{ backgroundColor: "#FDFAF4", border: "1px solid #D9CDB8" }}>
-              <p className="text-sm font-semibold text-[#2C2416] mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field="blogLeadershipTrip.contact.label">{c.contact.label}</p>
+              <p className="text-sm font-semibold text-[#2C2416] mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field="blogLeadershipTrip.contact.label" data-cms-rich><Rich text={c.contact.label} /></p>
               <p className="text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-                <span data-cms-field="blogLeadershipTrip.contact.name">{c.contact.name}</span><br />
-                <a href={`tel:${c.contact.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.phone">{c.contact.phone}</a><br />
-                <a href={`mailto:${c.contact.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.email">{c.contact.email}</a>
+                <span data-cms-field="blogLeadershipTrip.contact.name" data-cms-rich><Rich text={c.contact.name} /></span><br />
+                <a href={`tel:${c.contact.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.phone" data-cms-rich><Rich text={c.contact.phone} /></a><br />
+                <a href={`mailto:${c.contact.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="blogLeadershipTrip.contact.email" data-cms-rich><Rich text={c.contact.email} /></a>
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 mt-10">
-              <Link href="/407-2/" className="ulp-btn" data-cms-field="blogLeadershipTrip.learnMoreCta">{c.learnMoreCta}</Link>
-              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline" data-cms-field="blogLeadershipTrip.backCta">{c.backCta}</Link>
+              <Link href="/407-2/" className="ulp-btn" data-cms-field="blogLeadershipTrip.learnMoreCta" data-cms-rich><Rich text={c.learnMoreCta} /></Link>
+              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline" data-cms-field="blogLeadershipTrip.backCta" data-cms-rich><Rich text={c.backCta} /></Link>
             </div>
           </FadeSection>
         </div>

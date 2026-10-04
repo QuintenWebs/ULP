@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.ourCurriculum;
 
@@ -62,8 +63,8 @@ export default function OurCurriculum() {
       {/* Page header */}
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.header.eyebrow">{c.header.eyebrow}</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="ourCurriculum.header.title">{c.header.title}</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.header.eyebrow" data-cms-rich><Rich text={c.header.eyebrow} /></span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="ourCurriculum.header.title" data-cms-rich><Rich text={c.header.title} /></h1>
         </div>
       </section>
 
@@ -73,9 +74,9 @@ export default function OurCurriculum() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
             <FadeSection>
               <p className="text-[#2C2416] text-lg leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-                <span data-cms-field="ourCurriculum.intro.bodyStart">{c.intro.bodyStart}</span>{" "}
-                <strong data-cms-field="ourCurriculum.intro.bodyPartner">{c.intro.bodyPartner}</strong>
-                <span data-cms-field="ourCurriculum.intro.bodyEnd">{c.intro.bodyEnd}</span>
+                <span data-cms-field="ourCurriculum.intro.bodyStart" data-cms-rich><Rich text={c.intro.bodyStart} /></span>{" "}
+                <strong data-cms-field="ourCurriculum.intro.bodyPartner" data-cms-rich><Rich text={c.intro.bodyPartner} /></strong>
+                <span data-cms-field="ourCurriculum.intro.bodyEnd" data-cms-rich><Rich text={c.intro.bodyEnd} /></span>
               </p>
             </FadeSection>
             <FadeSection delay={80}>
@@ -91,10 +92,10 @@ export default function OurCurriculum() {
 
           {/* Four icon info cards */}
           <FadeSection delay={60}>
-            <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.whatWeAre.eyebrow">{c.whatWeAre.eyebrow}</span>
-            <h2 className="ulp-section-title mb-3" data-cms-field="ourCurriculum.whatWeAre.title">{c.whatWeAre.title}</h2>
-            <p className="text-[#6B5B45] mb-8 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourCurriculum.whatWeAre.intro">
-              {c.whatWeAre.intro}
+            <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.whatWeAre.eyebrow" data-cms-rich><Rich text={c.whatWeAre.eyebrow} /></span>
+            <h2 className="ulp-section-title mb-3" data-cms-field="ourCurriculum.whatWeAre.title" data-cms-rich><Rich text={c.whatWeAre.title} /></h2>
+            <p className="text-[#6B5B45] mb-8 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourCurriculum.whatWeAre.intro" data-cms-rich>
+              <Rich text={c.whatWeAre.intro} />
             </p>
           </FadeSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
@@ -102,9 +103,9 @@ export default function OurCurriculum() {
               <FadeSection key={card.label} delay={i * 70}>
                 <div className="p-6 h-full" style={{ backgroundColor: "#FDFAF4", borderTop: "3px solid #D4521A" }}>
                   <div className="mb-4" style={{ color: "#D4521A" }}>{card.icon}</div>
-                  <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.14em" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].label`}>{card.label}</p>
-                  <p className="font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.05rem" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].value`}>{card.value}</p>
-                  <p className="text-sm leading-relaxed text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].detail`}>{card.detail}</p>
+                  <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.14em" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].label`} data-cms-rich><Rich text={card.label} /></p>
+                  <p className="font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.05rem" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].value`} data-cms-rich><Rich text={card.value} /></p>
+                  <p className="text-sm leading-relaxed text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.whatWeAre.cards[${i}].detail`} data-cms-rich><Rich text={card.detail} /></p>
                 </div>
               </FadeSection>
             ))}
@@ -112,24 +113,24 @@ export default function OurCurriculum() {
 
           {/* Three phases timeline */}
           <FadeSection delay={80}>
-            <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.phases.eyebrow">{c.phases.eyebrow}</span>
-            <h2 className="ulp-section-title mb-6" data-cms-field="ourCurriculum.phases.title">{c.phases.title}</h2>
+            <span className="ulp-label mb-5 inline-block" data-cms-field="ourCurriculum.phases.eyebrow" data-cms-rich><Rich text={c.phases.eyebrow} /></span>
+            <h2 className="ulp-section-title mb-6" data-cms-field="ourCurriculum.phases.title" data-cms-rich><Rich text={c.phases.title} /></h2>
             <div className="relative mb-10">
               <div className="absolute top-6 left-6 right-6 h-0.5 hidden sm:block" style={{ backgroundColor: "#C4921A" }} />
               <div className="grid sm:grid-cols-3 gap-6 relative z-10">
                 {phases.map((p, i) => (
                   <div key={p.num} className="text-center">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg" style={{ backgroundColor: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif" }}>{p.num}</div>
-                    <p className="font-bold text-[#2C2416] text-sm mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field={`ourCurriculum.phases.items[${i}].phase`}>{p.phase}</p>
-                    <p className="text-xs text-[#D4521A] mb-2" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.phases.items[${i}].sub`}>{p.sub}</p>
-                    <p className="text-sm text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.phases.items[${i}].desc`}>{p.desc}</p>
+                    <p className="font-bold text-[#2C2416] text-sm mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em" }} data-cms-field={`ourCurriculum.phases.items[${i}].phase`} data-cms-rich><Rich text={p.phase} /></p>
+                    <p className="text-xs text-[#D4521A] mb-2" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.phases.items[${i}].sub`} data-cms-rich><Rich text={p.sub} /></p>
+                    <p className="text-sm text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourCurriculum.phases.items[${i}].desc`} data-cms-rich><Rich text={p.desc} /></p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="p-5" style={{ backgroundColor: "#1A1A14" }}>
-              <span className="ulp-label mb-3 inline-block" data-cms-field="ourCurriculum.phases.throughoutLabel">{c.phases.throughoutLabel}</span>
-              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourCurriculum.phases.throughoutBody">{c.phases.throughoutBody}</p>
+              <span className="ulp-label mb-3 inline-block" data-cms-field="ourCurriculum.phases.throughoutLabel" data-cms-rich><Rich text={c.phases.throughoutLabel} /></span>
+              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourCurriculum.phases.throughoutBody" data-cms-rich><Rich text={c.phases.throughoutBody} /></p>
             </div>
           </FadeSection>
         </div>
@@ -147,9 +148,9 @@ export default function OurCurriculum() {
           />
           <div className="absolute inset-0 flex items-end" style={{ background: "linear-gradient(to top, rgba(26,26,20,0.82) 0%, rgba(26,26,20,0.2) 60%, transparent 100%)" }}>
             <div className="container pb-10">
-              <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A", letterSpacing: "0.14em" }} data-cms-field="ourCurriculum.community.eyebrow">{c.community.eyebrow}</p>
-              <p className="max-w-lg" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.2rem, 2.5vw, 1.75rem)", color: "#F5EFE0", fontWeight: 600, lineHeight: 1.3 }} data-cms-field="ourCurriculum.community.quote">
-                {c.community.quote}
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A", letterSpacing: "0.14em" }} data-cms-field="ourCurriculum.community.eyebrow" data-cms-rich><Rich text={c.community.eyebrow} /></p>
+              <p className="max-w-lg" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.2rem, 2.5vw, 1.75rem)", color: "#F5EFE0", fontWeight: 600, lineHeight: 1.3 }} data-cms-field="ourCurriculum.community.quote" data-cms-rich>
+                <Rich text={c.community.quote} />
               </p>
             </div>
           </div>

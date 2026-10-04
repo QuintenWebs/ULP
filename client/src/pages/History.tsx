@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.history;
 
@@ -29,8 +30,8 @@ export default function History() {
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block" data-cms-field="history.hero.eyebrow">{c.hero.eyebrow}</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="history.hero.title">{c.hero.title}</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="history.hero.eyebrow" data-cms-rich><Rich text={c.hero.eyebrow} /></span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="history.hero.title" data-cms-rich><Rich text={c.hero.title} /></h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
@@ -42,11 +43,12 @@ export default function History() {
                 className={i === 0 ? "text-[#2C2416] text-lg leading-relaxed mb-8" : "text-[#2C2416] leading-relaxed mb-8"}
                 style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
                 data-cms-field={`history.body.paragraphs[${i}]`}
+                data-cms-rich
               >
-                {text}
+                <Rich text={text} />
               </p>
             ))}
-            <Link href="/about-us/" className="ulp-btn" data-cms-field="history.body.cta">{c.body.cta}</Link>
+            <Link href="/about-us/" className="ulp-btn" data-cms-field="history.body.cta" data-cms-rich><Rich text={c.body.cta} /></Link>
           </FadeSection>
         </div>
       </section>

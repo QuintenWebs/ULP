@@ -13,6 +13,7 @@ import { Fragment, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { toast } from "sonner";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.layout;
 
@@ -315,8 +316,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="h-12 w-auto object-contain mb-4"
                 style={{ filter: "brightness(0) invert(1)" }}
               />
-              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72" }} data-cms-field="layout.footer.tagline">
-                {c.footer.tagline}
+              <p className="text-sm leading-relaxed" style={{ color: "#9A8A72" }} data-cms-field="layout.footer.tagline" data-cms-rich>
+                <Rich text={c.footer.tagline} />
               </p>
             </div>
 
@@ -326,8 +327,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="text-xs uppercase tracking-widest mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }}
                 data-cms-field="layout.footer.quickLinksHeading"
+                data-cms-rich
               >
-                {c.footer.quickLinksHeading}
+                <Rich text={c.footer.quickLinksHeading} />
               </h4>
               <ul className="space-y-2 text-sm">
                 {[
@@ -357,30 +359,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="text-xs uppercase tracking-widest mb-4"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }}
                 data-cms-field="layout.footer.contactHeading"
+                data-cms-rich
               >
-                {c.footer.contactHeading}
+                <Rich text={c.footer.contactHeading} />
               </h4>
               <address className="not-italic text-sm space-y-2" style={{ color: "#9A8A72" }}>
                 <p>
                   {c.footer.addressLines.map((line, i) => (
                     <Fragment key={i}>
                       {i > 0 && <br />}
-                      <span data-cms-field={`layout.footer.addressLines[${i}]`}>{line}</span>
+                      <span data-cms-field={`layout.footer.addressLines[${i}]`} data-cms-rich><Rich text={line} /></span>
                     </Fragment>
                   ))}
                 </p>
                 <p>
-                  <a href={`tel:${c.footer.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.phone">
-                    {c.footer.phone}
+                  <a href={`tel:${c.footer.phone.replace(/[^\d+]/g, "")}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.phone" data-cms-rich>
+                    <Rich text={c.footer.phone} />
                   </a>
                 </p>
                 <p>
-                  <a href={`mailto:${c.footer.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.email">
-                    {c.footer.email}
+                  <a href={`mailto:${c.footer.email}`} className="hover:text-[#D4521A] transition-colors" data-cms-field="layout.footer.email" data-cms-rich>
+                    <Rich text={c.footer.email} />
                   </a>
                 </p>
-                <p style={{ color: "#6B5B45" }} data-cms-field="layout.footer.bank">
-                  {c.footer.bank}
+                <p style={{ color: "#6B5B45" }} data-cms-field="layout.footer.bank" data-cms-rich>
+                  <Rich text={c.footer.bank} />
                 </p>
               </address>
               {/* Social */}
@@ -416,7 +419,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             style={{ borderTop: "1px solid #2C2C22", color: "#4A3E2E" }}
           >
             © {new Date().getFullYear()}{" "}
-            <span data-cms-field="layout.footer.copyright">{c.footer.copyright}</span>
+            <span data-cms-field="layout.footer.copyright" data-cms-rich><Rich text={c.footer.copyright} /></span>
           </div>
         </div>
       </footer>

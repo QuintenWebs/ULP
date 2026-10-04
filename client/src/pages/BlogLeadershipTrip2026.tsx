@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.blogLeadershipTrip2026;
 
@@ -41,14 +42,14 @@ export default function BlogLeadershipTrip2026() {
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogLeadershipTrip2026.header.date">{c.header.date}</span>
-            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogLeadershipTrip2026.header.author">{c.header.author}</span></span>
+            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogLeadershipTrip2026.header.date" data-cms-rich><Rich text={c.header.date} /></span>
+            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogLeadershipTrip2026.header.author" data-cms-rich><Rich text={c.header.author} /></span></span>
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogLeadershipTrip2026.header.title">
-            {c.header.title}
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogLeadershipTrip2026.header.title" data-cms-rich>
+            <Rich text={c.header.title} />
           </h1>
-          <p className="mt-4 text-lg" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.header.subtitle">
-            {c.header.subtitle}
+          <p className="mt-4 text-lg" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.header.subtitle" data-cms-rich>
+            <Rich text={c.header.subtitle} />
           </p>
         </div>
       </section>
@@ -69,31 +70,31 @@ export default function BlogLeadershipTrip2026() {
         <div className="container max-w-2xl">
           <FadeSection>
             <p className="text-[#2C2416] text-lg leading-relaxed mb-8" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              <span data-cms-field="blogLeadershipTrip2026.body.leadStart">{c.body.leadStart}</span>{" "}
-              <strong data-cms-field="blogLeadershipTrip2026.body.leadStrong">{c.body.leadStrong}</strong>{" "}
-              <span data-cms-field="blogLeadershipTrip2026.body.leadEnd">{c.body.leadEnd}</span>
+              <span data-cms-field="blogLeadershipTrip2026.body.leadStart" data-cms-rich><Rich text={c.body.leadStart} /></span>{" "}
+              <strong data-cms-field="blogLeadershipTrip2026.body.leadStrong" data-cms-rich><Rich text={c.body.leadStrong} /></strong>{" "}
+              <span data-cms-field="blogLeadershipTrip2026.body.leadEnd" data-cms-rich><Rich text={c.body.leadEnd} /></span>
             </p>
           </FadeSection>
 
           <FadeSection delay={60}>
             {/* Pull quote */}
             <blockquote className="border-l-4 pl-6 my-10" style={{ borderColor: "#D4521A" }}>
-              <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.35rem", color: "#2C2416", fontWeight: 600, lineHeight: 1.45 }} data-cms-field="blogLeadershipTrip2026.body.quote">
-                {c.body.quote}
+              <p style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.35rem", color: "#2C2416", fontWeight: 600, lineHeight: 1.45 }} data-cms-field="blogLeadershipTrip2026.body.quote" data-cms-rich>
+                <Rich text={c.body.quote} />
               </p>
             </blockquote>
           </FadeSection>
 
           <FadeSection delay={80}>
             <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              <span data-cms-field="blogLeadershipTrip2026.body.themeStart">{c.body.themeStart}</span>{" "}
-              <em data-cms-field="blogLeadershipTrip2026.body.themeEm">{c.body.themeEm}</em>{" "}
-              <span data-cms-field="blogLeadershipTrip2026.body.themeMiddle">{c.body.themeMiddle}</span>{" "}
-              <strong data-cms-field="blogLeadershipTrip2026.body.themeStrong">{c.body.themeStrong}</strong>
-              <span data-cms-field="blogLeadershipTrip2026.body.themeEnd">{c.body.themeEnd}</span>
+              <span data-cms-field="blogLeadershipTrip2026.body.themeStart" data-cms-rich><Rich text={c.body.themeStart} /></span>{" "}
+              <em data-cms-field="blogLeadershipTrip2026.body.themeEm" data-cms-rich><Rich text={c.body.themeEm} /></em>{" "}
+              <span data-cms-field="blogLeadershipTrip2026.body.themeMiddle" data-cms-rich><Rich text={c.body.themeMiddle} /></span>{" "}
+              <strong data-cms-field="blogLeadershipTrip2026.body.themeStrong" data-cms-rich><Rich text={c.body.themeStrong} /></strong>
+              <span data-cms-field="blogLeadershipTrip2026.body.themeEnd" data-cms-rich><Rich text={c.body.themeEnd} /></span>
             </p>
-            <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.body.programme">
-              {c.body.programme}
+            <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.body.programme" data-cms-rich>
+              <Rich text={c.body.programme} />
             </p>
           </FadeSection>
 
@@ -109,15 +110,15 @@ export default function BlogLeadershipTrip2026() {
           </FadeSection>
 
           <FadeSection delay={80}>
-            <h2 className="ulp-section-title mb-4" data-cms-field="blogLeadershipTrip2026.participation.title">{c.participation.title}</h2>
+            <h2 className="ulp-section-title mb-4" data-cms-field="blogLeadershipTrip2026.participation.title" data-cms-rich><Rich text={c.participation.title} /></h2>
             <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              <span data-cms-field="blogLeadershipTrip2026.participation.schoolStart">{c.participation.schoolStart}</span>{" "}
-              <strong data-cms-field="blogLeadershipTrip2026.participation.schoolStrong">{c.participation.schoolStrong}</strong>{" "}
-              <span data-cms-field="blogLeadershipTrip2026.participation.schoolEnd">{c.participation.schoolEnd}</span>
+              <span data-cms-field="blogLeadershipTrip2026.participation.schoolStart" data-cms-rich><Rich text={c.participation.schoolStart} /></span>{" "}
+              <strong data-cms-field="blogLeadershipTrip2026.participation.schoolStrong" data-cms-rich><Rich text={c.participation.schoolStrong} /></strong>{" "}
+              <span data-cms-field="blogLeadershipTrip2026.participation.schoolEnd" data-cms-rich><Rich text={c.participation.schoolEnd} /></span>
             </p>
             <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
-              <strong data-cms-field="blogLeadershipTrip2026.participation.donationStrong">{c.participation.donationStrong}</strong>{" "}
-              <span data-cms-field="blogLeadershipTrip2026.participation.donationEnd">{c.participation.donationEnd}</span>
+              <strong data-cms-field="blogLeadershipTrip2026.participation.donationStrong" data-cms-rich><Rich text={c.participation.donationStrong} /></strong>{" "}
+              <span data-cms-field="blogLeadershipTrip2026.participation.donationEnd" data-cms-rich><Rich text={c.participation.donationEnd} /></span>
             </p>
           </FadeSection>
 
@@ -127,16 +128,16 @@ export default function BlogLeadershipTrip2026() {
               {facts.map((item, i) => (
                 <div key={i} className="p-5" style={{ backgroundColor: "#FDFAF4", borderTop: "3px solid #D4521A" }}>
                   <div className="mb-2" style={{ color: "#D4521A" }}>{item.icon}</div>
-                  <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.12em" }} data-cms-field={`blogLeadershipTrip2026.facts.items[${i}].label`}>{item.label}</p>
-                  <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`blogLeadershipTrip2026.facts.items[${i}].value`}>{item.value}</p>
+                  <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.12em" }} data-cms-field={`blogLeadershipTrip2026.facts.items[${i}].label`} data-cms-rich><Rich text={item.label} /></p>
+                  <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`blogLeadershipTrip2026.facts.items[${i}].value`} data-cms-rich><Rich text={item.value} /></p>
                 </div>
               ))}
             </div>
           </FadeSection>
 
           <FadeSection delay={80}>
-            <p className="text-[#2C2416] leading-relaxed mb-10" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.closing.body">
-              {c.closing.body}
+            <p className="text-[#2C2416] leading-relaxed mb-10" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="blogLeadershipTrip2026.closing.body" data-cms-rich>
+              <Rich text={c.closing.body} />
             </p>
 
             {/* CTA */}
@@ -147,10 +148,11 @@ export default function BlogLeadershipTrip2026() {
                 rel="noopener noreferrer"
                 className="ulp-btn"
                 data-cms-field="blogLeadershipTrip2026.closing.registerCta"
+                data-cms-rich
               >
-                {c.closing.registerCta}
+                <Rich text={c.closing.registerCta} />
               </a>
-              <Link href="/407-2/" className="ulp-btn ulp-btn-outline" data-cms-field="blogLeadershipTrip2026.closing.aboutCta">{c.closing.aboutCta}</Link>
+              <Link href="/407-2/" className="ulp-btn ulp-btn-outline" data-cms-field="blogLeadershipTrip2026.closing.aboutCta" data-cms-rich><Rich text={c.closing.aboutCta} /></Link>
             </div>
           </FadeSection>
 
@@ -159,8 +161,8 @@ export default function BlogLeadershipTrip2026() {
             <div className="mt-14 pt-8 flex items-center gap-4" style={{ borderTop: "1px solid #D9CDB8" }}>
               <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0" style={{ backgroundColor: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif" }}>{c.byline.name.charAt(0)}</div>
               <div>
-                <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }} data-cms-field="blogLeadershipTrip2026.byline.name">{c.byline.name}</p>
-                <p className="text-xs text-[#9A8A72]" data-cms-field="blogLeadershipTrip2026.byline.organisation">{c.byline.organisation}</p>
+                <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }} data-cms-field="blogLeadershipTrip2026.byline.name" data-cms-rich><Rich text={c.byline.name} /></p>
+                <p className="text-xs text-[#9A8A72]" data-cms-field="blogLeadershipTrip2026.byline.organisation" data-cms-rich><Rich text={c.byline.organisation} /></p>
               </div>
             </div>
           </FadeSection>
@@ -168,8 +170,8 @@ export default function BlogLeadershipTrip2026() {
           {/* Back link */}
           <FadeSection delay={40}>
             <div className="mt-10">
-              <Link href="/news-stories/" className="text-sm hover:text-[#D4521A] transition-colors" style={{ color: "#6B5B45", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }} data-cms-field="blogLeadershipTrip2026.backLink">
-                {c.backLink}
+              <Link href="/news-stories/" className="text-sm hover:text-[#D4521A] transition-colors" style={{ color: "#6B5B45", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }} data-cms-field="blogLeadershipTrip2026.backLink" data-cms-rich>
+                <Rich text={c.backLink} />
               </Link>
             </div>
           </FadeSection>

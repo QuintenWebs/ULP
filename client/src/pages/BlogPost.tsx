@@ -10,6 +10,7 @@ import { useRoute, Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
 import NotFound from "./NotFound";
+import { Rich } from "@/lib/rich";
 
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
@@ -26,10 +27,10 @@ export default function BlogPost() {
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field={`blog.posts[${index}].date`}>{post.date}</span>
-            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field={`blog.posts[${index}].author`}>{post.author}</span></span>
+            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field={`blog.posts[${index}].date`} data-cms-rich><Rich text={post.date} /></span>
+            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field={`blog.posts[${index}].author`} data-cms-rich><Rich text={post.author} /></span></span>
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field={`blog.posts[${index}].title`}>{post.title}</h1>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field={`blog.posts[${index}].title`} data-cms-rich><Rich text={post.title} /></h1>
         </div>
       </section>
 

@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.theProgram;
 
@@ -63,8 +64,8 @@ export default function TheProgram() {
       {/* Page header */}
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.header.eyebrow">{c.header.eyebrow}</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="theProgram.header.title">{c.header.title}</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.header.eyebrow" data-cms-rich><Rich text={c.header.eyebrow} /></span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="theProgram.header.title" data-cms-rich><Rich text={c.header.title} /></h1>
         </div>
       </section>
 
@@ -75,10 +76,10 @@ export default function TheProgram() {
             {/* Text + cards column */}
             <div className="lg:col-span-3">
               <FadeSection>
-                <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.businessSchool.eyebrow">{c.businessSchool.eyebrow}</span>
-                <h2 className="ulp-section-title mb-3" data-cms-field="theProgram.businessSchool.title">{c.businessSchool.title}</h2>
-                <p className="text-[#6B5B45] mb-8 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.businessSchool.intro">
-                  {c.businessSchool.intro}
+                <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.businessSchool.eyebrow" data-cms-rich><Rich text={c.businessSchool.eyebrow} /></span>
+                <h2 className="ulp-section-title mb-3" data-cms-field="theProgram.businessSchool.title" data-cms-rich><Rich text={c.businessSchool.title} /></h2>
+                <p className="text-[#6B5B45] mb-8 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.businessSchool.intro" data-cms-rich>
+                  <Rich text={c.businessSchool.intro} />
                 </p>
               </FadeSection>
 
@@ -88,17 +89,17 @@ export default function TheProgram() {
                   <FadeSection key={card.label} delay={i * 70}>
                     <div className="p-6 h-full" style={{ backgroundColor: "#FDFAF4", borderTop: "3px solid #D4521A" }}>
                       <div className="mb-4" style={{ color: "#D4521A" }}>{card.icon}</div>
-                      <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.14em" }} data-cms-field={`theProgram.businessSchool.cards[${i}].label`}>{card.label}</p>
-                      <p className="font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.1rem" }} data-cms-field={`theProgram.businessSchool.cards[${i}].value`}>{card.value}</p>
-                      <p className="text-sm leading-relaxed text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`theProgram.businessSchool.cards[${i}].detail`}>{card.detail}</p>
+                      <p className="text-xs uppercase tracking-widest mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#9A8A72", letterSpacing: "0.14em" }} data-cms-field={`theProgram.businessSchool.cards[${i}].label`} data-cms-rich><Rich text={card.label} /></p>
+                      <p className="font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.1rem" }} data-cms-field={`theProgram.businessSchool.cards[${i}].value`} data-cms-rich><Rich text={card.value} /></p>
+                      <p className="text-sm leading-relaxed text-[#6B5B45]" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`theProgram.businessSchool.cards[${i}].detail`} data-cms-rich><Rich text={card.detail} /></p>
                     </div>
                   </FadeSection>
                 ))}
               </div>
 
               <FadeSection delay={80}>
-                <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.businessSchool.body">
-                  {c.businessSchool.body}
+                <p className="text-[#2C2416] leading-relaxed mb-6" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.businessSchool.body" data-cms-rich>
+                  <Rich text={c.businessSchool.body} />
                 </p>
               </FadeSection>
             </div>
@@ -135,16 +136,16 @@ export default function TheProgram() {
               />
             </FadeSection>
             <FadeSection delay={100}>
-              <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.vision.eyebrow">{c.vision.eyebrow}</span>
-              <h2 className="mb-5" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#F5EFE0", fontWeight: 700 }} data-cms-field="theProgram.vision.title">
-                {c.vision.title}
+              <span className="ulp-label mb-5 inline-block" data-cms-field="theProgram.vision.eyebrow" data-cms-rich><Rich text={c.vision.eyebrow} /></span>
+              <h2 className="mb-5" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#F5EFE0", fontWeight: 700 }} data-cms-field="theProgram.vision.title" data-cms-rich>
+                <Rich text={c.vision.title} />
               </h2>
-              <p className="mb-6 leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.vision.body">
-                {c.vision.body}
+              <p className="mb-6 leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="theProgram.vision.body" data-cms-rich>
+                <Rich text={c.vision.body} />
               </p>
               <div className="flex gap-4 flex-wrap">
-                <Link href="/our-curriculum/" className="ulp-btn" data-cms-field="theProgram.vision.curriculumCta">{c.vision.curriculumCta}</Link>
-                <Link href="/our-partners/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#C8B89A", color: "#C8B89A" }} data-cms-field="theProgram.vision.partnersCta">{c.vision.partnersCta}</Link>
+                <Link href="/our-curriculum/" className="ulp-btn" data-cms-field="theProgram.vision.curriculumCta" data-cms-rich><Rich text={c.vision.curriculumCta} /></Link>
+                <Link href="/our-partners/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#C8B89A", color: "#C8B89A" }} data-cms-field="theProgram.vision.partnersCta" data-cms-rich><Rich text={c.vision.partnersCta} /></Link>
               </div>
             </FadeSection>
           </div>

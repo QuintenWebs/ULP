@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.meetOurTeam;
 
@@ -55,10 +56,10 @@ function TeamGrid({ team, className }: { team: Team; className: string }) {
             <div className="overflow-hidden mb-3">
               <img src={member.image} alt={member.imageAlt || member.name} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={{ objectPosition: member.photoPosition }} data-cms-field={`${list}[${i}].image`} />
             </div>
-            <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field={`${list}[${i}].name`}>{member.name}</p>
-            <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field={`${list}[${i}].title`}>{member.title}</p>
+            <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field={`${list}[${i}].name`} data-cms-rich><Rich text={member.name} /></p>
+            <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field={`${list}[${i}].title`} data-cms-rich><Rich text={member.title} /></p>
             {member.linkedin && (
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }} data-cms-field="meetOurTeam.linkedinCta">{c.linkedinCta}</a>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }} data-cms-field="meetOurTeam.linkedinCta" data-cms-rich><Rich text={c.linkedinCta} /></a>
             )}
           </div>
         </FadeSection>
@@ -72,26 +73,26 @@ export default function MeetOurTeam() {
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block" data-cms-field="meetOurTeam.header.eyebrow">{c.header.eyebrow}</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="meetOurTeam.header.title">{c.header.title}</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="meetOurTeam.header.eyebrow" data-cms-rich><Rich text={c.header.eyebrow} /></span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="meetOurTeam.header.title" data-cms-rich><Rich text={c.header.title} /></h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container">
           <FadeSection>
-            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="meetOurTeam.intro">
-              {c.intro}
+            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="meetOurTeam.intro" data-cms-rich>
+              <Rich text={c.intro} />
             </p>
           </FadeSection>
           {/* Tanzania team — shown first */}
           <FadeSection delay={60}>
-            <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.tanzania.label">{c.tanzania.label}</span>
+            <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.tanzania.label" data-cms-rich><Rich text={c.tanzania.label} /></span>
           </FadeSection>
           <TeamGrid team="tanzania" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" />
 
           {/* Netherlands team */}
           <FadeSection delay={60}>
-            <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.netherlands.label">{c.netherlands.label}</span>
+            <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.netherlands.label" data-cms-rich><Rich text={c.netherlands.label} /></span>
           </FadeSection>
           <TeamGrid team="netherlands" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" />
         </div>

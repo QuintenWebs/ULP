@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.blogEnglishClasses;
 
@@ -33,10 +34,10 @@ export default function BlogEnglishClasses() {
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container max-w-3xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogEnglishClasses.header.date">{c.header.date}</span>
-            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogEnglishClasses.header.author">{c.header.author}</span></span>
+            <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="blogEnglishClasses.header.date" data-cms-rich><Rich text={c.header.date} /></span>
+            <span className="text-xs" style={{ color: "#9A8A72" }}>by <span data-cms-field="blogEnglishClasses.header.author" data-cms-rich><Rich text={c.header.author} /></span></span>
           </div>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogEnglishClasses.header.title">{c.header.title}</h1>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="blogEnglishClasses.header.title" data-cms-rich><Rich text={c.header.title} /></h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
@@ -44,25 +45,25 @@ export default function BlogEnglishClasses() {
           <FadeSection>
             <div className="prose max-w-none" style={{ fontFamily: "'Source Serif 4', Georgia, serif", color: "#2C2416", lineHeight: 1.8 }}>
               {c.body.intro.map((text, i) => (
-                <p key={i} data-cms-field={`blogEnglishClasses.body.intro[${i}]`}>{text}</p>
+                <p key={i} data-cms-field={`blogEnglishClasses.body.intro[${i}]`} data-cms-rich><Rich text={text} /></p>
               ))}
-              <h3 style={headingStyle} data-cms-field="blogEnglishClasses.body.confidence.heading">{c.body.confidence.heading}</h3>
-              <p data-cms-field="blogEnglishClasses.body.confidence.text">{c.body.confidence.text}</p>
-              <h3 style={headingStyle} data-cms-field="blogEnglishClasses.body.lookingAhead.heading">{c.body.lookingAhead.heading}</h3>
-              <p data-cms-field="blogEnglishClasses.body.lookingAhead.text">{c.body.lookingAhead.text}</p>
+              <h3 style={headingStyle} data-cms-field="blogEnglishClasses.body.confidence.heading" data-cms-rich><Rich text={c.body.confidence.heading} /></h3>
+              <p data-cms-field="blogEnglishClasses.body.confidence.text" data-cms-rich><Rich text={c.body.confidence.text} /></p>
+              <h3 style={headingStyle} data-cms-field="blogEnglishClasses.body.lookingAhead.heading" data-cms-rich><Rich text={c.body.lookingAhead.heading} /></h3>
+              <p data-cms-field="blogEnglishClasses.body.lookingAhead.text" data-cms-rich><Rich text={c.body.lookingAhead.text} /></p>
               <ul>
                 {c.body.lookingAhead.goals.map((goal, i) => (
-                  <li key={i} data-cms-field={`blogEnglishClasses.body.lookingAhead.goals[${i}]`}>{goal}</li>
+                  <li key={i} data-cms-field={`blogEnglishClasses.body.lookingAhead.goals[${i}]`} data-cms-rich><Rich text={goal} /></li>
                 ))}
               </ul>
-              <p data-cms-field="blogEnglishClasses.body.closing">{c.body.closing}</p>
+              <p data-cms-field="blogEnglishClasses.body.closing" data-cms-rich><Rich text={c.body.closing} /></p>
               <p>
-                <span data-cms-field="blogEnglishClasses.body.supportText">{c.body.supportText}</span>{" "}
-                <Link href="/contact-us/" style={{ color: "#D4521A" }} data-cms-field="blogEnglishClasses.body.supportCta">{c.body.supportCta}</Link>
+                <span data-cms-field="blogEnglishClasses.body.supportText" data-cms-rich><Rich text={c.body.supportText} /></span>{" "}
+                <Link href="/contact-us/" style={{ color: "#D4521A" }} data-cms-field="blogEnglishClasses.body.supportCta" data-cms-rich><Rich text={c.body.supportCta} /></Link>
               </p>
             </div>
             <div className="mt-10">
-              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline" data-cms-field="blogEnglishClasses.body.backCta">{c.body.backCta}</Link>
+              <Link href="/news-stories/" className="ulp-btn ulp-btn-outline" data-cms-field="blogEnglishClasses.body.backCta" data-cms-rich><Rich text={c.body.backCta} /></Link>
             </div>
           </FadeSection>
         </div>

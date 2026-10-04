@@ -9,6 +9,7 @@
 import { useEffect, useRef } from "react";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.ourPartners;
 
@@ -42,15 +43,15 @@ export default function OurPartners() {
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
         <div className="container">
-          <span className="ulp-label mb-5 inline-block" data-cms-field="ourPartners.header.eyebrow">{c.header.eyebrow}</span>
-          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="ourPartners.header.title">{c.header.title}</h1>
+          <span className="ulp-label mb-5 inline-block" data-cms-field="ourPartners.header.eyebrow" data-cms-rich><Rich text={c.header.eyebrow} /></span>
+          <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.25rem, 5vw, 3.75rem)", fontWeight: 800, color: "#F5EFE0", lineHeight: 1.1 }} data-cms-field="ourPartners.header.title" data-cms-rich><Rich text={c.header.title} /></h1>
         </div>
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container">
           <FadeSection>
-            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourPartners.intro">
-              {c.intro}
+            <p className="text-[#2C2416] text-lg leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="ourPartners.intro" data-cms-rich>
+              <Rich text={c.intro} />
             </p>
           </FadeSection>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -78,14 +79,15 @@ export default function OurPartners() {
                     className="font-semibold text-[#2C2416] text-sm mb-2"
                     style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.06em", textTransform: "uppercase" }}
                     data-cms-field={`ourPartners.items[${i}].name`}
+                    data-cms-rich
                   >
-                    {p.name}
+                    <Rich text={p.name} />
                   </p>
-                  <p className="text-xs text-[#6B5B45] leading-relaxed mb-3" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourPartners.items[${i}].description`}>
-                    {p.description}
+                  <p className="text-xs text-[#6B5B45] leading-relaxed mb-3" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`ourPartners.items[${i}].description`} data-cms-rich>
+                    <Rich text={p.description} />
                   </p>
-                  <span className="text-xs mt-auto" style={{ color: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field="ourPartners.visitCta">
-                    {c.visitCta}
+                  <span className="text-xs mt-auto" style={{ color: "#D4521A", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field="ourPartners.visitCta" data-cms-rich>
+                    <Rich text={c.visitCta} />
                   </span>
                 </a>
               </FadeSection>

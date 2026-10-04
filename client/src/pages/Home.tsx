@@ -12,6 +12,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
+import { Rich } from "@/lib/rich";
 
 const c = content.home;
 
@@ -57,21 +58,21 @@ export default function Home() {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(26,26,20,0.88) 0%, rgba(26,26,20,0.3) 55%, rgba(26,26,20,0.05) 100%)" }} />
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <span className="ulp-label mb-5 inline-block" data-cms-field="home.hero.eyebrow">{c.hero.eyebrow}</span>
+            <span className="ulp-label mb-5 inline-block" data-cms-field="home.hero.eyebrow" data-cms-rich><Rich text={c.hero.eyebrow} /></span>
             <h1
               className="text-white mb-4"
               style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 800, lineHeight: 1.05, letterSpacing: "-0.02em" }}
             >
-              <span data-cms-field="home.hero.titleStart">{c.hero.titleStart}</span>{" "}
-              <span style={{ color: "#E8693A" }} data-cms-field="home.hero.titleAccent">{c.hero.titleAccent}</span>{" "}
-              <span data-cms-field="home.hero.titleEnd">{c.hero.titleEnd}</span>
+              <span data-cms-field="home.hero.titleStart" data-cms-rich><Rich text={c.hero.titleStart} /></span>{" "}
+              <span style={{ color: "#E8693A" }} data-cms-field="home.hero.titleAccent" data-cms-rich><Rich text={c.hero.titleAccent} /></span>{" "}
+              <span data-cms-field="home.hero.titleEnd" data-cms-rich><Rich text={c.hero.titleEnd} /></span>
             </h1>
-            <p className="text-lg mb-8 max-w-lg" style={{ color: "#C8B89A", fontFamily: "'Source Serif 4', Georgia, serif", lineHeight: 1.65 }} data-cms-field="home.hero.subtitle">
-              {c.hero.subtitle}
+            <p className="text-lg mb-8 max-w-lg" style={{ color: "#C8B89A", fontFamily: "'Source Serif 4', Georgia, serif", lineHeight: 1.65 }} data-cms-field="home.hero.subtitle" data-cms-rich>
+              <Rich text={c.hero.subtitle} />
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/the-program/" className="ulp-btn" data-cms-field="home.hero.primaryCta">{c.hero.primaryCta}</Link>
-              <Link href="/donate/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#C8B89A", color: "#C8B89A" }} data-cms-field="home.hero.secondaryCta">{c.hero.secondaryCta}</Link>
+              <Link href="/the-program/" className="ulp-btn" data-cms-field="home.hero.primaryCta" data-cms-rich><Rich text={c.hero.primaryCta} /></Link>
+              <Link href="/donate/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#C8B89A", color: "#C8B89A" }} data-cms-field="home.hero.secondaryCta" data-cms-rich><Rich text={c.hero.secondaryCta} /></Link>
             </div>
           </div>
         </div>
@@ -82,8 +83,8 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeSection>
-              <span className="ulp-label ulp-label-outline mb-6 inline-block" data-cms-field="home.intro.eyebrow">{c.intro.eyebrow}</span>
-              <h2 className="ulp-section-title mb-6" data-cms-field="home.intro.title">{c.intro.title}</h2>
+              <span className="ulp-label ulp-label-outline mb-6 inline-block" data-cms-field="home.intro.eyebrow" data-cms-rich><Rich text={c.intro.eyebrow} /></span>
+              <h2 className="ulp-section-title mb-6" data-cms-field="home.intro.title" data-cms-rich><Rich text={c.intro.title} /></h2>
               <hr className="ulp-rule" />
               {c.intro.paragraphs.map((text, i) => (
                 <p
@@ -91,11 +92,12 @@ export default function Home() {
                   className={i === c.intro.paragraphs.length - 1 ? "text-[#2C2416] mb-6" : "text-[#2C2416] mb-4"}
                   style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
                   data-cms-field={`home.intro.paragraphs[${i}]`}
+                  data-cms-rich
                 >
-                  {text}
+                  <Rich text={text} />
                 </p>
               ))}
-              <Link href="/the-program/" className="ulp-btn inline-block" data-cms-field="home.intro.cta">{c.intro.cta}</Link>
+              <Link href="/the-program/" className="ulp-btn inline-block" data-cms-field="home.intro.cta" data-cms-rich><Rich text={c.intro.cta} /></Link>
             </FadeSection>
 
             {/* Image collage, fixed three photos on all screen sizes */}
@@ -137,10 +139,10 @@ export default function Home() {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#FDFAF4" }}>
         <div className="container">
           <FadeSection>
-            <span className="ulp-label mb-5 inline-block" data-cms-field="home.pillars.eyebrow">{c.pillars.eyebrow}</span>
-            <h2 className="ulp-section-title mb-3" data-cms-field="home.pillars.title">{c.pillars.title}</h2>
-            <p className="text-[#6B5B45] mb-12 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="home.pillars.intro">
-              {c.pillars.intro}
+            <span className="ulp-label mb-5 inline-block" data-cms-field="home.pillars.eyebrow" data-cms-rich><Rich text={c.pillars.eyebrow} /></span>
+            <h2 className="ulp-section-title mb-3" data-cms-field="home.pillars.title" data-cms-rich><Rich text={c.pillars.title} /></h2>
+            <p className="text-[#6B5B45] mb-12 max-w-xl" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="home.pillars.intro" data-cms-rich>
+              <Rich text={c.pillars.intro} />
             </p>
           </FadeSection>
 
@@ -170,15 +172,15 @@ export default function Home() {
               <img src={c.mission.image} alt={c.mission.imageAlt} className="w-full h-[420px] object-cover" data-cms-field="home.mission.image" />
             </FadeSection>
             <FadeSection delay={100}>
-              <span className="ulp-label mb-6 inline-block" data-cms-field="home.mission.eyebrow">{c.mission.eyebrow}</span>
-              <h2 className="mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, lineHeight: 1.15, color: "#F5EFE0" }} data-cms-field="home.mission.title">
-                {c.mission.title}
+              <span className="ulp-label mb-6 inline-block" data-cms-field="home.mission.eyebrow" data-cms-rich><Rich text={c.mission.eyebrow} /></span>
+              <h2 className="mb-6" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", fontWeight: 700, lineHeight: 1.15, color: "#F5EFE0" }} data-cms-field="home.mission.title" data-cms-rich>
+                <Rich text={c.mission.title} />
               </h2>
               <hr className="ulp-rule" />
-              <p className="mb-6 leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="home.mission.body">
-                {c.mission.body}
+              <p className="mb-6 leading-relaxed" style={{ color: "#9A8A72", fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="home.mission.body" data-cms-rich>
+                <Rich text={c.mission.body} />
               </p>
-              <Link href="/about-us/" className="ulp-btn ulp-btn-light" data-cms-field="home.mission.cta">{c.mission.cta}</Link>
+              <Link href="/about-us/" className="ulp-btn ulp-btn-light" data-cms-field="home.mission.cta" data-cms-rich><Rich text={c.mission.cta} /></Link>
             </FadeSection>
           </div>
         </div>
@@ -188,16 +190,16 @@ export default function Home() {
       <section className="py-16 lg:py-20" style={{ backgroundColor: "#D4521A" }}>
         <div className="container text-center">
           <FadeSection>
-            <h2 className="mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: "#FDFAF4", fontWeight: 700 }} data-cms-field="home.getInvolved.title">
-              {c.getInvolved.title}
+            <h2 className="mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: "#FDFAF4", fontWeight: 700 }} data-cms-field="home.getInvolved.title" data-cms-rich>
+              <Rich text={c.getInvolved.title} />
             </h2>
-            <p className="mb-8 max-w-xl mx-auto" style={{ color: "#F5EFE0", fontFamily: "'Source Serif 4', Georgia, serif", opacity: 0.9 }} data-cms-field="home.getInvolved.body">
-              {c.getInvolved.body}
+            <p className="mb-8 max-w-xl mx-auto" style={{ color: "#F5EFE0", fontFamily: "'Source Serif 4', Georgia, serif", opacity: 0.9 }} data-cms-field="home.getInvolved.body" data-cms-rich>
+              <Rich text={c.getInvolved.body} />
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/donate/" className="ulp-btn ulp-btn-light" data-cms-field="home.getInvolved.donateCta">{c.getInvolved.donateCta}</Link>
-              <Link href="/participate/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#FDFAF4", color: "#FDFAF4" }} data-cms-field="home.getInvolved.participateCta">{c.getInvolved.participateCta}</Link>
-              <Link href="/407-2/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#FDFAF4", color: "#FDFAF4" }} data-cms-field="home.getInvolved.tripCta">{c.getInvolved.tripCta}</Link>
+              <Link href="/donate/" className="ulp-btn ulp-btn-light" data-cms-field="home.getInvolved.donateCta" data-cms-rich><Rich text={c.getInvolved.donateCta} /></Link>
+              <Link href="/participate/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#FDFAF4", color: "#FDFAF4" }} data-cms-field="home.getInvolved.participateCta" data-cms-rich><Rich text={c.getInvolved.participateCta} /></Link>
+              <Link href="/407-2/" className="ulp-btn ulp-btn-outline" style={{ borderColor: "#FDFAF4", color: "#FDFAF4" }} data-cms-field="home.getInvolved.tripCta" data-cms-rich><Rich text={c.getInvolved.tripCta} /></Link>
             </div>
           </FadeSection>
         </div>
@@ -219,8 +221,9 @@ function PillarCard({ p, i }: { p: typeof pillars[0]; i: number }) {
           className="text-xs px-2 py-1 font-semibold uppercase tracking-wider"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", backgroundColor: p.color, color: "#FDFAF4", fontSize: "0.65rem", letterSpacing: "0.15em" }}
           data-cms-field={`home.pillars.items[${i}].sublabel`}
+          data-cms-rich
         >
-          {p.sublabel}
+          <Rich text={p.sublabel} />
         </span>
         {(p as { external?: boolean }).external && (
           <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,8 +231,8 @@ function PillarCard({ p, i }: { p: typeof pillars[0]; i: number }) {
           </svg>
         )}
       </div>
-      <h3 className="text-lg font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }} data-cms-field={`home.pillars.items[${i}].label`}>{p.label}</h3>
-      <p className="text-sm text-[#6B5B45] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`home.pillars.items[${i}].desc`}>{p.desc}</p>
+      <h3 className="text-lg font-bold mb-3 text-[#2C2416]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }} data-cms-field={`home.pillars.items[${i}].label`} data-cms-rich><Rich text={p.label} /></h3>
+      <p className="text-sm text-[#6B5B45] leading-relaxed" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`home.pillars.items[${i}].desc`} data-cms-rich><Rich text={p.desc} /></p>
     </div>
   );
 }

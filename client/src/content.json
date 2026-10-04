@@ -461,19 +461,25 @@
           "name": "Shakira Nasser",
           "title": "Manager & Mentor",
           "image": "/assets/team-shakira.jpg",
-          "imageAlt": "Shakira Nasser"
+          "imageAlt": "Shakira Nasser",
+          "linkedin": "https://www.linkedin.com/in/shakira-nasser-ba7918133/",
+          "photoPosition": "center 20%"
         },
         {
           "name": "Nasra Kigombola",
           "title": "Teacher, Mentor & Support",
           "image": "/uploads/1790749941360-DSC08555.webp",
-          "imageAlt": "Nasra Kigombola"
+          "imageAlt": "Nasra Kigombola",
+          "linkedin": "",
+          "photoPosition": "center 15%"
         },
         {
           "name": "Kaspary Felix Mponda",
           "title": "Staff Mabughai & ULP Programme Coordinator",
           "image": "/uploads/1790749974214-DSC08290.webp",
-          "imageAlt": "Kaspary Felix Mponda"
+          "imageAlt": "Kaspary Felix Mponda",
+          "linkedin": "",
+          "photoPosition": "center 20%"
         }
       ]
     },
@@ -484,13 +490,17 @@
           "name": "Hans Valkenburg",
           "title": "Support Team Netherlands",
           "image": "/assets/team-hans.jpg",
-          "imageAlt": "Hans Valkenburg"
+          "imageAlt": "Hans Valkenburg",
+          "linkedin": "https://www.linkedin.com/in/hansvalkenburg/",
+          "photoPosition": "center 20%"
         },
         {
           "name": "Janne Reedeker",
           "title": "Support Team Netherlands",
           "image": "/assets/janne-reedeker.png",
-          "imageAlt": "Janne Reedeker"
+          "imageAlt": "Janne Reedeker",
+          "linkedin": "https://www.linkedin.com/in/janne-reedeker-6a55b9236/",
+          "photoPosition": "center 35%"
         }
       ]
     }

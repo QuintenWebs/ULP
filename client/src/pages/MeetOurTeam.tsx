@@ -3,8 +3,8 @@
  * Sections: header, intro, Tanzania team, Netherlands team
  *
  * All copy and team photos come from content.json so they can be edited in the
- * Mirantic CMS. Anything structural (LinkedIn links, photo framing, layout)
- * stays in code.
+ * Mirantic CMS, and team members can be added and removed there. Layout stays
+ * in code.
  */
 
 import { useEffect, useRef } from "react";
@@ -25,21 +25,47 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
   return <div ref={ref} className="fade-up">{children}</div>;
 }
 
-// Structure that belongs to the design rather than the content. Merged with the
-// editable member copy by position. Photo framing is tuned per portrait.
-const TEAM_NL_DESIGN = [
-  { linkedin: "https://www.linkedin.com/in/hansvalkenburg/", objectPosition: "center 20%" },
-  { linkedin: "https://www.linkedin.com/in/janne-reedeker-6a55b9236/", objectPosition: "center 35%" },
-];
+// A new member added in the Mirantic CMS starts as this, then gets edited in
+// place. LinkedIn and photo framing live on each member so they stay with the
+// right person when the list changes.
+const NEW_MEMBER = {
+  name: "New team member",
+  title: "Role",
+  image: "/assets/team-placeholder.svg",
+  imageAlt: "",
+  linkedin: "",
+  photoPosition: "center 20%",
+};
 
-const TEAM_TZ_DESIGN = [
-  { linkedin: "https://www.linkedin.com/in/shakira-nasser-ba7918133/", objectPosition: "center 20%" },
-  { linkedin: "", objectPosition: "center 15%" },
-  { linkedin: "", objectPosition: "center 20%" },
-];
+type Team = "tanzania" | "netherlands";
 
-const teamNL = c.netherlands.members.map((member, i) => ({ ...TEAM_NL_DESIGN[i], ...member }));
-const teamTZ = c.tanzania.members.map((member, i) => ({ ...TEAM_TZ_DESIGN[i], ...member }));
+/** One team's grid. Marked as a CMS list so members can be added and removed. */
+function TeamGrid({ team, className }: { team: Team; className: string }) {
+  const list = `meetOurTeam.${team}.members`;
+  return (
+    <div
+      className={className}
+      data-cms-list={list}
+      data-cms-list-label="team member"
+      data-cms-list-new={JSON.stringify(NEW_MEMBER)}
+    >
+      {c[team].members.map((member, i) => (
+        <FadeSection key={i} delay={i * 70}>
+          <div className="group" data-cms-item={i}>
+            <div className="overflow-hidden mb-3">
+              <img src={member.image} alt={member.imageAlt || member.name} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={{ objectPosition: member.photoPosition }} data-cms-field={`${list}[${i}].image`} />
+            </div>
+            <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field={`${list}[${i}].name`}>{member.name}</p>
+            <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field={`${list}[${i}].title`}>{member.title}</p>
+            {member.linkedin && (
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }} data-cms-field="meetOurTeam.linkedinCta">{c.linkedinCta}</a>
+            )}
+          </div>
+        </FadeSection>
+      ))}
+    </div>
+  );
+}
 
 export default function MeetOurTeam() {
   return (
@@ -61,49 +87,13 @@ export default function MeetOurTeam() {
           <FadeSection delay={60}>
             <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.tanzania.label">{c.tanzania.label}</span>
           </FadeSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {teamTZ.map((member, i) => {
-              const imgStyle: React.CSSProperties = { objectPosition: member.objectPosition };
-              return (
-                <FadeSection key={member.name} delay={i * 70}>
-                  <div className="group">
-                    <div className="overflow-hidden mb-3">
-                      <img src={member.image} alt={member.imageAlt} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={imgStyle} data-cms-field={`meetOurTeam.tanzania.members[${i}].image`} />
-                    </div>
-                    <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field={`meetOurTeam.tanzania.members[${i}].name`}>{member.name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field={`meetOurTeam.tanzania.members[${i}].title`}>{member.title}</p>
-                    {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }} data-cms-field="meetOurTeam.linkedinCta">{c.linkedinCta}</a>
-                    )}
-                  </div>
-                </FadeSection>
-              );
-            })}
-          </div>
+          <TeamGrid team="tanzania" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" />
 
           {/* Netherlands team */}
           <FadeSection delay={60}>
             <span className="ulp-label ulp-label-outline mb-8 inline-block" data-cms-field="meetOurTeam.netherlands.label">{c.netherlands.label}</span>
           </FadeSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamNL.map((member, i) => {
-              const imgStyle: React.CSSProperties = { objectPosition: member.objectPosition };
-              return (
-                <FadeSection key={member.name} delay={i * 70}>
-                  <div className="group">
-                    <div className="overflow-hidden mb-3">
-                      <img src={member.image} alt={member.imageAlt} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105" style={imgStyle} data-cms-field={`meetOurTeam.netherlands.members[${i}].image`} />
-                    </div>
-                    <p className="font-semibold text-[#2C2416] text-sm" style={{ fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }} data-cms-field={`meetOurTeam.netherlands.members[${i}].name`}>{member.name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "#9A8A72", fontFamily: "'Barlow Condensed', sans-serif" }} data-cms-field={`meetOurTeam.netherlands.members[${i}].title`}>{member.title}</p>
-                    {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs mt-1 block" style={{ color: "#D4521A" }} data-cms-field="meetOurTeam.linkedinCta">{c.linkedinCta}</a>
-                    )}
-                  </div>
-                </FadeSection>
-              );
-            })}
-          </div>
+          <TeamGrid team="netherlands" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" />
         </div>
       </section>
     </Layout>

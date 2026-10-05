@@ -480,6 +480,14 @@
           "imageAlt": "Kaspary Felix Mponda",
           "linkedin": "",
           "photoPosition": "center 20%"
+        },
+        {
+          "name": "New team member",
+          "image": "/assets/team-placeholder.svg",
+          "title": "Teacher, Mentor & Support",
+          "imageAlt": "",
+          "linkedin": "",
+          "photoPosition": "center 20%"
         }
       ]
     },

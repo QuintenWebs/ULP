@@ -8,7 +8,8 @@
  *   - click-to-select (opens that field in the CMS sidebar), with text editable
  *     right on the page and the selection kept outlined
  *   - live preview of pending edits (text + images) without reloading
- *   - live preview of brand-new blog posts (cloned from a template node)
+ *   - blog posts: hands unpublished and edited posts to the site, which
+ *     renders them itself (see cms-blog.ts), and shows image placeholders
  *   - adding and removing items in lists marked with data-cms-list
  *   - formatted text (bold, italic, underline, links, the site's text styles)
  *     in elements marked data-cms-rich
@@ -89,9 +90,6 @@
         (data.changes || []).forEach(function (c) {
           applyValue(c.field, c.value, c.fieldType);
         });
-        (data.newPosts || []).forEach(function (p) {
-          addBlogPost(p.tempId, p.post);
-        });
         break;
       case "highlight":
         selectField(data.field);
@@ -105,11 +103,15 @@
       case "apply-change":
         applyValue(data.field, data.value, data.fieldType);
         break;
-      case "apply-blog-post":
-        addBlogPost(data.tempId, data.post);
+      case "set-blog":
+        window.__CMS_BLOG__ = { drafts: data.drafts || [], edits: data.edits || {} };
+        // Navigate first and announce after, in the same task, so the site
+        // renders the new address and the new posts together.
+        if (data.navigate) navigate(data.navigate, true);
+        window.dispatchEvent(new Event("cms:blog"));
         break;
-      case "remove-blog-post":
-        removeBlogPost(data.tempId);
+      case "navigate":
+        navigate(data.path, false);
         break;
       case "apply-list-add":
         addListItem(data.tempId, data.list, data.index, data.item, data.after);
@@ -584,34 +586,14 @@
     styledEl = null;
   }
 
-  // ── Blog posts ─────────────────────────────────────────────────────────
-  // Clones the hidden template node [data-cms-template="blog-post"], fills its
-  // [data-cms-field] children from the post object, and appends it to the list
-  // container ([data-cms-posts], else the template's parent).
-  function addBlogPost(tempId, post) {
-    removeBlogPost(tempId); // avoid duplicates on re-init
-    var template = document.querySelector('[data-cms-template="blog-post"]');
-    if (!template) return;
-
-    var node = template.cloneNode(true);
-    node.removeAttribute("data-cms-template");
-    node.removeAttribute("hidden");
-    node.style.display = "";
-    node.setAttribute("data-cms-temp-id", tempId);
-
-    node.querySelectorAll("[data-cms-field]").forEach(function (child) {
-      var key = child.getAttribute("data-cms-field");
-      if (post[key] != null) setElementValue(child, post[key], fieldTypeOf(child));
-    });
-
-    var container =
-      document.querySelector("[data-cms-posts]") || template.parentNode;
-    if (container) container.appendChild(node);
-  }
-
-  function removeBlogPost(tempId) {
-    var existing = document.querySelector('[data-cms-temp-id="' + cssEscape(tempId) + '"]');
-    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+  // ── Navigation ─────────────────────────────────────────────────────
+  // Single-page routers (wouter, React Router) follow history changes and
+  // re-read the address on popstate.
+  function navigate(path, replace) {
+    if (!path || path === currentPath()) return;
+    history[replace ? "replaceState" : "pushState"]({}, "", path);
+    window.dispatchEvent(new PopStateEvent("popstate", { state: {} }));
+    window.scrollTo(0, 0);
   }
 
   // ── Lists ───────────────────────────────────────────────────────────
@@ -726,7 +708,7 @@
           var remove = document.createElement("button");
           remove.type = "button";
           remove.className = "cms-list-control cms-list-remove";
-          remove.title = "Remove this " + label;
+          remove.title = "Remove this " + (itemEl.getAttribute("data-cms-item-label") || label);
           remove.textContent = "\u00d7 Remove";
           remove.setAttribute("data-cms-list-action", "remove");
           remove.setAttribute("data-cms-list-path", list);
@@ -786,7 +768,11 @@
     ghost.setAttribute("data-cms-list-action", "add");
     ghost.setAttribute("data-cms-list-path", container.getAttribute("data-cms-list"));
     ghost.setAttribute("data-cms-list-after", itemEl.getAttribute("data-cms-item"));
-    ghost.style.minHeight = cell.getBoundingClientRect().height + "px";
+    // Compact lists (a post's paragraphs and images) get a slim placeholder;
+    // others one the size of an item, so it's clear what is being added.
+    ghost.style.minHeight = container.hasAttribute("data-cms-list-compact")
+      ? "56px"
+      : cell.getBoundingClientRect().height + "px";
     ghost.innerHTML = '<span class="cms-list-ghost-plus">+</span><span></span>';
     ghost.lastChild.textContent = "Add " + label + " here";
     container.insertBefore(ghost, cell.nextSibling);
@@ -856,6 +842,13 @@
       "animation:cms-fade-in .15s ease-out;}" +
       ".cms-list-ghost:hover{background:rgba(74,111,165,0.14);}" +
       ".cms-list-ghost-plus{font-size:28px;font-weight:300;line-height:1;}" +
+      // Empty image slots on a post: only shown while editing.
+      "[data-cms-placeholder]{display:none !important;}" +
+      ".cms-edit-mode [data-cms-placeholder]{display:flex !important;flex-direction:column;" +
+      "align-items:center;justify-content:center;gap:8px;min-height:180px;border:2px dashed " + ACCENT +
+      ";border-radius:10px;background-color:rgba(74,111,165,0.06);background-size:cover;" +
+      "background-position:center;color:" + ACCENT + ";font:600 14px/1.3 system-ui,sans-serif;}" +
+      ".cms-edit-mode [data-cms-placeholder]:hover{background-color:rgba(74,111,165,0.14);}" +
       "@keyframes cms-fade-in{from{opacity:0}to{opacity:1}}";
     var style = document.createElement("style");
     style.textContent = css;

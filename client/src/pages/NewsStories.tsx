@@ -2,8 +2,10 @@
  * News & Stories, /news-stories/
  *
  * The post list is driven by blog.posts[] in content.json so posts can be
- * written and published from the Mirantic CMS. Posts written here get a page at
+ * written and published from the Mirantic CMS. Posts written there get a page at
  * /blog/:slug; the four original posts keep their bespoke pages via `href`.
+ * In the CMS editor the list also shows unpublished posts, and hovering a post
+ * offers to start a new one.
  */
 
 import { useEffect, useRef } from "react";
@@ -11,6 +13,8 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import content from "@/content.json";
 import { Rich } from "@/lib/rich";
+import { useBlogPosts } from "@/lib/cms-blog";
+import type { Post } from "./BlogPost";
 
 const c = content.blog;
 
@@ -31,6 +35,7 @@ function FadeSection({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 export default function NewsStories() {
+  const entries = useBlogPosts(c.posts as Post[]);
   return (
     <Layout>
       <section className="py-14 lg:py-20" style={{ backgroundColor: "#1A1A14" }}>
@@ -41,35 +46,26 @@ export default function NewsStories() {
       </section>
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#F5EFE0" }}>
         <div className="container max-w-3xl">
-          {/* data-cms-posts marks where the CMS previews a brand-new post. */}
-          <div className="space-y-10" data-cms-posts>
-            {c.posts.map((post, i) => (
-              <FadeSection key={post.slug || i} delay={i * 80}>
-                <article className="border-b pb-10" style={{ borderColor: "#D9CDB8" }}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field={`blog.posts[${i}].date`} data-cms-rich><Rich text={post.date} /></span>
-                    <span className="text-xs text-[#9A8A72]">by <span data-cms-field={`blog.posts[${i}].author`} data-cms-rich><Rich text={post.author} /></span></span>
-                  </div>
-                  <h2 className="mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.6rem", fontWeight: 700, color: "#2C2416" }}>
-                    <Link href={postHref(post)} className="hover:text-[#D4521A] transition-colors" data-cms-field={`blog.posts[${i}].title`} data-cms-rich><Rich text={post.title} /></Link>
-                  </h2>
-                  <p className="text-[#6B5B45] leading-relaxed mb-4" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`blog.posts[${i}].excerpt`} data-cms-rich><Rich text={post.excerpt} /></p>
-                  <Link href={postHref(post)} className="ulp-btn ulp-btn-outline">Read more</Link>
-                </article>
-              </FadeSection>
+          {/* The CMS adds a post where you hover ("Add post here"), and can remove one. */}
+          <div className="space-y-10" data-cms-list="blog.posts" data-cms-list-label="post">
+            {entries.map(({ post, base, index, draftId }, i) => (
+              <div key={draftId ?? post.slug ?? i} data-cms-temp-id={draftId}>
+                <FadeSection delay={i * 80}>
+                  <article className="border-b pb-10" style={{ borderColor: "#D9CDB8" }} data-cms-item={index ?? -1}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span key={post.date} className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field={`${base}.date`} data-cms-rich><Rich text={post.date} /></span>
+                      <span className="text-xs text-[#9A8A72]">by <span key={post.author} data-cms-field={`${base}.author`} data-cms-rich><Rich text={post.author} /></span></span>
+                    </div>
+                    <h2 className="mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.6rem", fontWeight: 700, color: "#2C2416" }}>
+                      <Link key={post.title} href={postHref(post)} className="hover:text-[#D4521A] transition-colors" data-cms-field={`${base}.title`} data-cms-rich><Rich text={post.title} /></Link>
+                    </h2>
+                    <p key={post.excerpt} className="text-[#6B5B45] leading-relaxed mb-4" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field={`${base}.excerpt`} data-cms-rich><Rich text={post.excerpt} /></p>
+                    <Link href={postHref(post)} className="ulp-btn ulp-btn-outline">Read more</Link>
+                  </article>
+                </FadeSection>
+              </div>
             ))}
           </div>
-
-          {/* Hidden template the CMS clones to preview a post before publishing.
-              Field keys are relative, per the cms-bridge contract. */}
-          <article data-cms-template="blog-post" hidden className="border-b pb-10" style={{ borderColor: "#D9CDB8" }}>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#D4521A" }} data-cms-field="date" />
-              <span className="text-xs text-[#9A8A72]">by <span data-cms-field="author" /></span>
-            </div>
-            <h2 className="mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.6rem", fontWeight: 700, color: "#2C2416" }} data-cms-field="title" />
-            <p className="text-[#6B5B45] leading-relaxed mb-4" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }} data-cms-field="excerpt" />
-          </article>
         </div>
       </section>
     </Layout>

@@ -74,6 +74,45 @@
     "title": "Blog",
     "posts": [
       {
+        "date": "November 21, 2026",
+        "slug": "your-post-title",
+        "cover": "",
+        "title": "Your post title",
+        "author": "Hans Valkenburg",
+        "blocks": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lorem in augue fermentum ultrices. Click this text to write the opening of your story.",
+            "type": "text"
+          },
+          {
+            "alt": "",
+            "src": "",
+            "type": "image"
+          },
+          {
+            "text": "Sed posuere, nisl at faucibus ultricies, sapien neque tempus urna, vel facilisis justo arcu non lectus. Hover between paragraphs to add another, or use the side panel to add an image or a link.",
+            "type": "text"
+          },
+          {
+            "text": "Write your paragraph here.",
+            "type": "text"
+          },
+          {
+            "text": "Write your paragraph here.",
+            "type": "text"
+          },
+          {
+            "text": "Write your paragraph here.",
+            "type": "text"
+          },
+          {
+            "text": "Thank you to all the wonderful people from Angola, Uganda, Tanzania, South Africa, France and the Netherlands who made ULT2026 such a great success. By taking part, you also contributed to ULP Business School.",
+            "type": "text"
+          }
+        ],
+        "excerpt": "A short caption that sums up the post. It also shows in the list of posts."
+      },
+      {
         "title": "Join the Ubuntu Leadership Trip 2026",
         "date": "June 11, 2026",
         "author": "Janne",

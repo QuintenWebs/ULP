@@ -76,8 +76,8 @@
       {
         "date": "November 21, 2026",
         "slug": "your-post-title",
-        "cover": "",
-        "title": "Your post title",
+        "cover": "/uploads/1795262296198-IMG_1529.webp",
+        "title": "Ubuntu Leiderschap = leiden vanuit relatie met de Ander",
         "author": "Hans Valkenburg",
         "blocks": [
           {
@@ -118,7 +118,7 @@
             "type": "text"
           }
         ],
-        "excerpt": "ULT2026 was a experience! Together we discovered what ubuntu leadership is all about."
+        "excerpt": "ULT2026 was an experience! Together we discovered what ubuntu leadership is all about."
       },
       {
         "title": "Join the Ubuntu Leadership Trip 2026",

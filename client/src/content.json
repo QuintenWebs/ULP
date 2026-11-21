@@ -76,12 +76,20 @@
       {
         "date": "November 21, 2026",
         "slug": "your-post-title",
-        "cover": "/uploads/1795262296198-IMG_1529.webp",
-        "title": "Ubuntu Leiderschap = leiden vanuit relatie met de Ander",
+        "cover": "",
+        "title": "Your post title",
         "author": "Hans Valkenburg",
         "blocks": [
           {
             "text": "As always, the Ubuntu Leadership Trip (ULT) was about depth, connection and adventure. This time, though, it was shaped by one integrated theme: Ubuntu leadership: leading through a relationship with the Other. The group brought this theme beautifully to life, supported by Margreet Oostenbrink and Sandra van Beek.",
+            "type": "text"
+          },
+          {
+            "text": "Together, we explored the context that has shaped who we have become. We shared lessons in leadership by listening to one another, working together—for example, during the lively cooking workshop led by Piet van der Werff and Shakira Nasser, and sharing experiences, growing together along the way.",
+            "type": "text"
+          },
+          {
+            "text": "",
             "type": "text"
           },
           {
@@ -118,7 +126,7 @@
             "type": "text"
           }
         ],
-        "excerpt": "ULT2026 was an experience! Together we discovered what ubuntu leadership is all about."
+        "excerpt": "ULT2026 was a experience! Together we discovered what ubuntu leadership is all about."
       },
       {
         "title": "Join the Ubuntu Leadership Trip 2026",

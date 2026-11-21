@@ -75,6 +75,76 @@
     "posts": [
       {
         "date": "November 21, 2026",
+        "slug": "ubuntu-leadership-leading-through-a-relationship-with-the-other",
+        "cover": "/uploads/1795263079441-IMG_1529.webp",
+        "title": "Ubuntu Leadership = leading through a relationship with the Other",
+        "author": "Hans Valkenburg",
+        "blocks": [
+          {
+            "text": "As always, the Ubuntu Leadership Trip (ULT) was about depth, connection and adventure. This time, though, it was shaped by one integrated theme: Ubuntu leadership: leading through a relationship with the Other. The group brought this theme beautifully to life, supported by Margreet Oostenbrink and Sandra van Beek.",
+            "type": "text"
+          },
+          {
+            "text": "Together, we explored the context that has shaped who we have become. We shared lessons in leadership by listening to one another, working together, for example, during the lively cooking workshop led by Piet van der Werff and Shakira Nasser and sharing experiences, growing together along the way.",
+            "type": "text"
+          },
+          {
+            "text": "Although I have been organizing the Ubuntu Leadership Trips for years, this journey was a discovery of leadership for me too. What exactly is leadership? Especially when we approach it through the philosophy of Ubuntu, as we did during the trip. Here are a few lessons, at a glance…",
+            "type": "text"
+          },
+          {
+            "text": "Step 1: Leadership grows out of suffering We only truly learn when it hurts… Leadership is not about avoiding suffering, but about trying to live through it in a meaningful way.",
+            "type": "text"
+          },
+          {
+            "text": "Step 2: Leadership calls for self-transcendence Only by opening yourself to the perspective of the Other through deep listening can you become more together than the sum of your parts. (The Other is consistently capitalised because it encompasses our fellow human beings and the natural world in which the divine is realised.)",
+            "type": "text"
+          },
+          {
+            "text": "Step 3: Leadership is oriented towards harmony Ubuntu leadership seeks to restore harmony where it has been damaged, through a deep and vulnerable process of reconciliation and healing.",
+            "type": "text"
+          },
+          {
+            "alt": "",
+            "src": "",
+            "type": "image"
+          },
+          {
+            "text": "Perhaps Ubuntu leadership is so urgently needed, and the term is being used so often right now, because we see so little harmony around us. This is no passing trend; it is about restoring balance.",
+            "type": "text"
+          },
+          {
+            "text": "Thank you to all the wonderful people from Angola, Uganda, Tanzania, South Africa, France and the Netherlands who made ULT2026 such a great success. By taking part, you also contributed to ULP Business School.",
+            "type": "text"
+          }
+        ],
+        "excerpt": "ULT2026 was an experience! Together we discovered what ubuntu leadership is all about."
+      },
+      {
+        "date": "November 21, 2026",
+        "slug": "your-post-title-2",
+        "cover": "",
+        "title": "Your post title",
+        "author": "Hans Valkenburg",
+        "blocks": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lorem in augue fermentum ultrices. Click this text to write the opening of your story.",
+            "type": "text"
+          },
+          {
+            "alt": "",
+            "src": "",
+            "type": "image"
+          },
+          {
+            "text": "Sed posuere, nisl at faucibus ultricies, sapien neque tempus urna, vel facilisis justo arcu non lectus. Hover between paragraphs to add another, or use the side panel to add an image or a link.",
+            "type": "text"
+          }
+        ],
+        "excerpt": "A short caption that sums up the post. It also shows in the list of posts."
+      },
+      {
+        "date": "November 21, 2026",
         "slug": "your-post-title",
         "cover": "",
         "title": "Your post title",

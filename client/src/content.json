@@ -77,11 +77,15 @@
         "date": "November 21, 2026",
         "slug": "your-post-title",
         "cover": "",
-        "title": "Ubuntu Leadership = leading through a relationship with the Other",
+        "title": "Your post title",
         "author": "Hans Valkenburg",
         "blocks": [
           {
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae lorem in augue fermentum ultrices. Click this text to write the opening of your story.",
+            "text": "As always, the Ubuntu Leadership Trip (ULT) was about depth, connection and adventure. This time, though, it was shaped by one integrated theme: Ubuntu leadership: leading through a relationship with the Other. The group brought this theme beautifully to life, supported by Margreet Oostenbrink and Sandra van Beek.",
+            "type": "text"
+          },
+          {
+            "text": "Write your paragraph here.",
             "type": "text"
           },
           {
@@ -106,11 +110,15 @@
             "type": "text"
           },
           {
+            "text": "Perhaps Ubuntu leadership is so urgently needed—and the term is being used so often right now—because we see so little harmony around us. This is no passing trend; it is about restoring balance.",
+            "type": "text"
+          },
+          {
             "text": "Thank you to all the wonderful people from Angola, Uganda, Tanzania, South Africa, France and the Netherlands who made ULT2026 such a great success. By taking part, you also contributed to ULP Business School.",
             "type": "text"
           }
         ],
-        "excerpt": "A short caption that sums up the post. It also shows in the list of posts."
+        "excerpt": "ULT2026 was a experience! Together we discovered what ubuntu leadership is all about."
       },
       {
         "title": "Join the Ubuntu Leadership Trip 2026",
